@@ -5,5 +5,7 @@
 #include <iostream>
 // Used to save and load the data from the file
 #include <fstream>
+// Used to store the save data
+#include <vector>
 
 #endif // __SAVELOAD_H__
