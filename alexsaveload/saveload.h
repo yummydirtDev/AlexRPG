@@ -8,6 +8,6 @@
 // Used to store the save data
 #include <vector>
 // Used to save me a headache
-#include <boost/any.hpp>
+#include <boost/variant.hpp>
 
 #endif // __SAVELOAD_H__
