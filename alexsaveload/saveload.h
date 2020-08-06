@@ -7,8 +7,6 @@
 #include <fstream>
 // Used to store the save data
 #include <vector>
-// Used to save me a headache
-#include <boost/variant.hpp>
 // Define directories
 #include <stdlib.h>
 #include <string>
