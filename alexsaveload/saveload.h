@@ -7,5 +7,7 @@
 #include <fstream>
 // Used to store the save data
 #include <vector>
+// Used to save me a headache
+#include <boost/any.hpp>
 
 #endif // __SAVELOAD_H__
