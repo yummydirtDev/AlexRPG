@@ -7,10 +7,3 @@ void saveGame(std::vector<std::string> dataList) {
     }
     saveFile.close();
 }
-
-int main() {
-    int thingy{12};
-    float f{0.233};
-    std::vector<std::string> list{std::to_string(thingy), std::to_string(f)};
-    saveGame(list);
-}
