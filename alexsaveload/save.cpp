@@ -1,14 +1,16 @@
 #include "saveload.h"
 
-void saveGame(std::vector<boost::variant<float, int>> dataList) {
+void saveGame(std::vector<std::string> dataList) {
+    std::ofstream saveFile{std::string(getenv("HOME"))+"/.AlexRPG"};
     for (int i{0}; i < dataList.size(); i++) {
-        std::cout << dataList[i] << '\n';
+        saveFile << dataList[i] << '\n';
     }
+    saveFile.close();
 }
 
 int main() {
     int thingy{12};
     float f{0.233};
-    std::vector<boost::variant<float, int>> list{thingy, f};
+    std::vector<std::string> list{std::to_string(thingy), std::to_string(f)};
     saveGame(list);
 }
