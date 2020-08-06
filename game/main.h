@@ -3,4 +3,6 @@
 
 #include <iostream>
 
+void initGame();
+
 #endif // __MAIN_H__
