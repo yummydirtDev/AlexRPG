@@ -56,3 +56,7 @@ void GameData::setWit(int wit) {
 void GameData::setStoneface(int stoneface) {
     m_stoneface = stoneface;
 }
+
+int GameData::loadFromVector(std::vector<std::string> saveData) {
+    
+}

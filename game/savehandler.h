@@ -27,6 +27,7 @@ class GameData {
         void setCurrentHealth(int currentHealth);
         void setWit(int wit);
         void setStoneface(int stoneface);
+        int loadFromVector(std::vector<std::string> saveData);
 };
 
 #endif // __SAVEHANDLER_H__
