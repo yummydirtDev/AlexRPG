@@ -9,6 +9,10 @@ GameData::GameData(int turns, std::vector<int> items, int maxHealth, int current
     m_stoneface = stoneface;
 }
 
+std::string GameData::getUserName() {
+    return m_userName;
+}
+
 int GameData::getTurns() {
     return m_turns;
 }
@@ -31,6 +35,10 @@ int GameData::getWit() {
 
 int GameData::getStoneface() {
     return m_stoneface;
+}
+
+void GameData::setUserName(std::string userName) {
+    m_userName = userName;
 }
 
 void GameData::setTurns(int turns) {
@@ -58,5 +66,10 @@ void GameData::setStoneface(int stoneface) {
 }
 
 int GameData::loadFromVector(std::vector<std::string> saveData) {
-    
+    m_userName = saveData[0];
+    m_turns = std::stoi(saveData[1]);
+    m_maxHealth = std::stoi(saveData[2]);
+    m_currentHealth = std::stoi(saveData[3]);
+    m_wit = std::stoi(saveData[4]);
+    m_stoneface = std::stoi(saveData[5]);
 }
