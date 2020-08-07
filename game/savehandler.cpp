@@ -1,6 +1,30 @@
 #include "savehandler.h"
 
-class GameData {
+GameData::GameData(int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface) {
+    m_turns = turns;
+    m_items = items;
+    m_maxHealth = maxHealth;
+    m_currentHealth = currentHealth;
+    m_wit = wit;
+    m_stoneface = stoneface;
+}
+
+int GameData::getTurns() {
+    return m_turns;
+}
+
+std::vector<int> GameData::getItems() {
+    return m_items;
+}
+
+int GameData::getMaxHealth() {
+    return m_maxHealth;
+}
+
+int GameData::getCurrentHealth() {
+    return m_currentHealth;
+}
+/*class GameData {
     private:
         int m_turns;
         std::vector<int> m_items;
@@ -52,4 +76,4 @@ class GameData {
         void setStoneface(int stoneface) {
             m_stoneface = stoneface;
         }
-};
+}; */
