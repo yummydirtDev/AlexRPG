@@ -11,4 +11,7 @@
 #include <stdlib.h>
 #include <string>
 
+void saveGame(std::vector<std::string> dataList);
+std::vector<std::string> loadGame();
+
 #endif // __SAVELOAD_H__

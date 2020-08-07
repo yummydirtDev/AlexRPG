@@ -17,6 +17,7 @@ void initGame() {
             case 'l':
             case 'L':
                 std::cout << "This feature has not been implemented yet, come back soon!" << std::endl;
+                inputRecognized = true;
                 break;
             case 'n':
             case 'N':
