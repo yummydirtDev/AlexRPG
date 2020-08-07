@@ -15,6 +15,18 @@ class GameData {
         int m_stoneface;
     public:
         GameData(int turns, std::vector<int> items, int maxHealth, int wit, int stoneface);
+        int getTurns();
+        std::vector<int> getItems();
+        int getMaxHealth();
+        int getCurrentHealth();
+        int getWit();
+        int getStoneface();
+        void setTurns(int turns);
+        void setItems(std::vector<int> items);
+        void setMaxHealth(int maxHealth);
+        void setCurrentHealth(int currentHealth);
+        void setWit(int wit);
+        void setStoneface(int stoneface);
 };
 
 #endif // __SAVEHANDLER_H__
