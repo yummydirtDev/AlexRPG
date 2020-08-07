@@ -32,6 +32,30 @@ int GameData::getWit() {
 int GameData::getStoneface() {
     return m_stoneface;
 }
+
+void GameData::setTurns(int turns) {
+    m_turns = turns;
+}
+
+void GameData::setItems(std::vector<int> items) {
+    m_items = items;
+}
+
+void GameData::setMaxHealth(int maxHealth) {
+    m_maxHealth = maxHealth;
+}
+
+void GameData::setCurrentHealth(int currentHealth) {
+    m_currentHealth = currentHealth;
+}
+
+void GameData::setWit(int wit) {
+    m_wit = wit;
+}
+
+void GameData::setStoneface(int stoneface) {
+    m_stoneface = stoneface;
+}
 /*class GameData {
     private:
         int m_turns;

@@ -21,24 +21,12 @@ class GameData {
         int getCurrentHealth();
         int getWit();
         int getStoneface();
-        void setTurns(int turns) {
-            m_turns = turns;
-        }
-        void setItems(std::vector<int> items) {
-            m_items = items;
-        }
-        void setMaxHealth(int maxHealth) {
-            m_maxHealth = maxHealth;
-        }
-        void setCurrentHealth(int currentHealth) {
-            m_currentHealth = currentHealth;
-        }
-        void setWit(int wit) {
-            m_wit = wit;
-        }
-        void setStoneface(int stoneface) {
-            m_stoneface = stoneface;
-        }
+        void setTurns(int turns);
+        void setItems(std::vector<int> items);
+        void setMaxHealth(int maxHealth);
+        void setCurrentHealth(int currentHealth);
+        void setWit(int wit);
+        void setStoneface(int stoneface);
 };
 
 #endif // __SAVEHANDLER_H__
