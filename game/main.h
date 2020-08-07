@@ -4,5 +4,4 @@
 #include <iostream>
 #include "init.h"
 
-
 #endif // __MAIN_H__
