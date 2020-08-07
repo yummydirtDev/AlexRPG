@@ -24,6 +24,14 @@ int GameData::getMaxHealth() {
 int GameData::getCurrentHealth() {
     return m_currentHealth;
 }
+
+int GameData::getWit() {
+    return m_wit;
+}
+
+int GameData::getStoneface() {
+    return m_stoneface;
+}
 /*class GameData {
     private:
         int m_turns;

@@ -19,12 +19,8 @@ class GameData {
         std::vector<int> getItems();
         int getMaxHealth();
         int getCurrentHealth();
-        int getWit() {
-            return m_wit;
-        }
-        int getStoneface() {
-            return m_stoneface;
-        }
+        int getWit();
+        int getStoneface();
         void setTurns(int turns) {
             m_turns = turns;
         }
