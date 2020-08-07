@@ -3,10 +3,9 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 #include <limits>
+#include "saveload.h"
 
-void saveGame(std::vector<std::string> dataList);
 void initGame();
 
 #endif // __INIT_H__
