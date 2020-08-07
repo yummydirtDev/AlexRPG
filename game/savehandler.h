@@ -14,7 +14,7 @@ class GameData {
         int m_wit;
         int m_stoneface;
     public:
-        GameData();
+        GameData(int turns, std::vector<int> items, int maxHealth, int wit, int stoneface);
 };
 
 #endif // __SAVEHANDLER_H__
