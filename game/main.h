@@ -2,7 +2,7 @@
 #define __MAIN_H__
 
 #include <iostream>
+#include "init.h"
 
-void initGame();
 
 #endif // __MAIN_H__

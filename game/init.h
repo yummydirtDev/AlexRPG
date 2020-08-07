@@ -7,5 +7,6 @@
 #include <limits>
 
 void saveGame(std::vector<std::string> dataList);
+void initGame();
 
 #endif // __INIT_H__
