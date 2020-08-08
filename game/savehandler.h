@@ -26,6 +26,8 @@ class GameData {
         int getCurrentHealth();
         int getWit();
         int getStoneface();
+        int getXp();
+        int getLevel();
         void setUserName(std::string userName);
         void setTurns(int turns);
         void setItems(std::vector<int> items);
@@ -33,6 +35,8 @@ class GameData {
         void setCurrentHealth(int currentHealth);
         void setWit(int wit);
         void setStoneface(int stoneface);
+        void setXp(int xp);
+        void setLevel(int level);
         int loadFromVector(std::vector<std::string> saveData);
 };
 
