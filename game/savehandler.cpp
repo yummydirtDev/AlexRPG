@@ -76,7 +76,11 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     m_currentHealth = std::stoi(saveData[3]);
     m_wit = std::stoi(saveData[4]);
     m_stoneface = std::stoi(saveData[5]);
-    std::cout << saveData.size();
-    std::cout << saveData[saveData.size() - 1];
+    if ((saveData.size() - 1) > 6) {
+        m_items.resize(saveData.size() - 6);
+        for (int i{0}; i < m_items.size(); i++) {
+            m_items[i] = std::stoi(saveData[7 + i]);
+        }
+    }
     return 0;
 }
