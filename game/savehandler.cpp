@@ -9,6 +9,10 @@ GameData::GameData(int turns, std::vector<int> items, int maxHealth, int current
     m_stoneface = stoneface;
 }
 
+GameData::GameData() {
+
+}
+
 std::string GameData::getUserName() {
     return m_userName;
 }
@@ -72,4 +76,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     m_currentHealth = std::stoi(saveData[3]);
     m_wit = std::stoi(saveData[4]);
     m_stoneface = std::stoi(saveData[5]);
+    std::cout << saveData.size();
+    std::cout << saveData[saveData.size() - 1];
+    return 0;
 }
