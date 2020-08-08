@@ -38,10 +38,6 @@ int GameData::getTurns() {
     return m_turns;
 }
 
-std::vector<int> GameData::getItems() {
-    return m_items;
-}
-
 int GameData::getMaxHealth() {
     return m_maxHealth;
 }
@@ -72,10 +68,6 @@ void GameData::setUserName(std::string userName) {
 
 void GameData::setTurns(int turns) {
     m_turns = turns;
-}
-
-void GameData::setItems(std::vector<int> items) {
-    m_items = items;
 }
 
 void GameData::setMaxHealth(int maxHealth) {
@@ -134,19 +126,21 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
 
 std::vector<std::string> GameData::saveToVector() {
     std::vector<std::string> saveData;
-    saveData.resize(8 + m_items.size());
+    int si{9};
+    saveData.resize(9 + m_items.size());
     saveData[0] = m_userName;
-    saveData[1] = m_turns;
-    saveData[2] = m_maxHealth;
-    saveData[3] = m_currentHealth;
-    saveData[4] = m_wit;
-    saveData[5] = m_stoneface;
-    saveData[6] = m_xp;
-    saveData[7] = m_level;
+    saveData[1] = std::to_string(m_turns);
+    saveData[2] = std::to_string(m_maxHealth);
+    saveData[3] = std::to_string(m_currentHealth);
+    saveData[4] = std::to_string(m_wit);
+    saveData[5] = std::to_string(m_stoneface);
+    saveData[6] = std::to_string(m_xp);
+    saveData[7] = std::to_string(m_level);
     saveData[8] = "Items";
     for (int i{0}; i < m_items.size(); i++) {
-        int si{9};
-        saveData[si] = m_items[i];
+        saveData[si] = std::to_string(m_items[i]);
+        std::cout << si << '\n';
+        std::cout << std::to_string(m_items[i]) << '\n';
         si++;
     }
     return saveData;

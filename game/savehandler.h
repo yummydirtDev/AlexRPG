@@ -9,7 +9,6 @@ class GameData {
     private:
         std::string m_userName;
         int m_turns;
-        std::vector<int> m_items;
         int m_maxHealth;
         int m_currentHealth;
         int m_wit;
@@ -19,9 +18,9 @@ class GameData {
     public:
         GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface, int xp, int level);
         GameData();
+        std::vector<int> m_items;
         std::string getUserName();
         int getTurns();
-        std::vector<int> getItems();
         int getMaxHealth();
         int getCurrentHealth();
         int getWit();
@@ -30,7 +29,6 @@ class GameData {
         int getLevel();
         void setUserName(std::string userName);
         void setTurns(int turns);
-        void setItems(std::vector<int> items);
         void setMaxHealth(int maxHealth);
         void setCurrentHealth(int currentHealth);
         void setWit(int wit);
