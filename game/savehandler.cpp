@@ -2,7 +2,8 @@
 
 // Constructors
 
-GameData::GameData(int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface) {
+GameData::GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface) {
+    m_userName = userName;
     m_turns = turns;
     m_items = items;
     m_maxHealth = maxHealth;
@@ -12,7 +13,10 @@ GameData::GameData(int turns, std::vector<int> items, int maxHealth, int current
 }
 
 GameData::GameData() {
-
+    std::vector<int> items{};
+    m_turns = 0;
+    m_items = items;
+    m_maxHealth = 100;
 }
 
 // After this is a set of standard set/get functions
@@ -82,7 +86,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     m_userName = saveData[0];
 
     // Most of these have to be converted from string to integer with the stoi function
-    
+
     m_turns = std::stoi(saveData[1]);
     m_maxHealth = std::stoi(saveData[2]);
     m_currentHealth = std::stoi(saveData[3]);
