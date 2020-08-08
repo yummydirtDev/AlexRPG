@@ -131,3 +131,13 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     }
     return 0;
 }
+
+std::vector<std::string> GameData::saveToVector() {
+    std::vector<std::string> saveData;
+    saveData.resize(8 + m_items.size());
+    saveData[0] = m_userName;
+    saveData[1] = m_turns;
+    saveData[2] = m_maxHealth;
+    saveData[3] = m_currentHealth;
+    return saveData;
+}
