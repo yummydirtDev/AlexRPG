@@ -14,9 +14,14 @@ GameData::GameData(std::string userName, int turns, std::vector<int> items, int 
 
 GameData::GameData() {
     std::vector<int> items{};
+
+    m_userName = "Alex";
     m_turns = 0;
     m_items = items;
-    m_maxHealth = 100;
+    m_maxHealth = 30;
+    m_currentHealth = 30;
+    m_wit = 5;
+    m_stoneface = 5;
 }
 
 // After this is a set of standard set/get functions
