@@ -38,6 +38,7 @@ class GameData {
         void setXp(int xp);
         void setLevel(int level);
         int loadFromVector(std::vector<std::string> saveData);
+        std::vector<std::string> saveToVector();
 };
 
 #endif // __SAVEHANDLER_H__
