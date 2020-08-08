@@ -116,7 +116,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
 
     if ((saveData.size() - 1) > 8) {
         // Skip line 8 for future compatibility
-        m_items.resize(saveData.size() - 8);
+        m_items.resize(saveData.size() - 9);
         for (int i{0}; i < m_items.size(); i++) {
             m_items[i] = std::stoi(saveData[9 + i]);
         }
