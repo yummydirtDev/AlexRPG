@@ -1,5 +1,7 @@
 #include "savehandler.h"
 
+// Constructors
+
 GameData::GameData(int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface) {
     m_turns = turns;
     m_items = items;
@@ -12,6 +14,8 @@ GameData::GameData(int turns, std::vector<int> items, int maxHealth, int current
 GameData::GameData() {
 
 }
+
+// After this is a set of standard set/get functions
 
 std::string GameData::getUserName() {
     return m_userName;
