@@ -2,7 +2,7 @@
 
 // Constructors
 
-GameData::GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface) {
+GameData::GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface, int xp, int level) {
     m_userName = userName;
     m_turns = turns;
     m_items = items;

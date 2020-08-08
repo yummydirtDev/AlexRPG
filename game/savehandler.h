@@ -14,8 +14,10 @@ class GameData {
         int m_currentHealth;
         int m_wit;
         int m_stoneface;
+        int m_xp;
+        int m_level;
     public:
-        GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface);
+        GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface, int xp, int level);
         GameData();
         std::string getUserName();
         int getTurns();
