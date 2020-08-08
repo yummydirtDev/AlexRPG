@@ -80,12 +80,15 @@ loads it into the object
 
 int GameData::loadFromVector(std::vector<std::string> saveData) {
     m_userName = saveData[0];
+    // Most of these have to be converted from string to integer with the stoi function
     m_turns = std::stoi(saveData[1]);
     m_maxHealth = std::stoi(saveData[2]);
     m_currentHealth = std::stoi(saveData[3]);
     m_wit = std::stoi(saveData[4]);
     m_stoneface = std::stoi(saveData[5]);
+    // This is a bit more complex since it is a vector to be loaded
     if ((saveData.size() - 1) > 6) {
+        // Skip line 6 for future compatibility
         m_items.resize(saveData.size() - 6);
         for (int i{0}; i < m_items.size(); i++) {
             m_items[i] = std::stoi(saveData[7 + i]);
