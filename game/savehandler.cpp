@@ -73,6 +73,11 @@ void GameData::setStoneface(int stoneface) {
     m_stoneface = stoneface;
 }
 
+/* 
+This function essentially takes the save data from the vector and
+loads it into the object
+*/
+
 int GameData::loadFromVector(std::vector<std::string> saveData) {
     m_userName = saveData[0];
     m_turns = std::stoi(saveData[1]);
