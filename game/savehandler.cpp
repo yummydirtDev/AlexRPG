@@ -139,5 +139,15 @@ std::vector<std::string> GameData::saveToVector() {
     saveData[1] = m_turns;
     saveData[2] = m_maxHealth;
     saveData[3] = m_currentHealth;
+    saveData[4] = m_wit;
+    saveData[5] = m_stoneface;
+    saveData[6] = m_xp;
+    saveData[7] = m_level;
+    saveData[8] = "Items";
+    for (int i{0}; i < m_items.size(); i++) {
+        int si{9};
+        saveData[si] = m_items[i];
+        si++;
+    }
     return saveData;
 }
