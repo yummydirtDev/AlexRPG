@@ -103,7 +103,9 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     m_userName = saveData[0];
 
     // Most of these have to be converted from string to integer with the stoi function
-
+    if (saveData.size() < 7) {
+        return 1;
+    }
     m_turns = std::stoi(saveData[1]);
     m_maxHealth = std::stoi(saveData[2]);
     m_currentHealth = std::stoi(saveData[3]);
