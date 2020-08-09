@@ -28,20 +28,6 @@ GameData::GameData() {
     m_level = 0;
 }
 
-void GameData::newGame() {
-    std::vector<int> items{};
-
-    m_userName = "Alex";
-    m_turns = 0;
-    m_items = items;
-    m_maxHealth = 30;
-    m_currentHealth = 30;
-    m_wit = 5;
-    m_stoneface = 5;
-    m_xp = 0;
-    m_level = 0;
-}
-
 // After this is a set of standard set/get functions
 
 std::string GameData::getUserName() {
