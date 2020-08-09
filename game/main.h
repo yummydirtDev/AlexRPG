@@ -4,5 +4,6 @@
 #include <iostream>
 #include "init.h"
 #include "savehandler.h"
+#include "game.h"
 
 #endif // __MAIN_H__
