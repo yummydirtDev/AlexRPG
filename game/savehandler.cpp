@@ -94,7 +94,7 @@ void GameData::setLevel(int level) {
     m_level = level;
 }
 
-/* 
+/*
 This function essentially takes the save data from the vector and
 loads it into the object
 */
@@ -120,7 +120,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     if ((saveData.size() - 1) > 8) {
         // Skip line 8 for future compatibility
         m_items.resize(saveData.size() - 9);
-        for (int i{0}; i < m_items.size(); i++) {
+        for (int i{ 0 }; i < m_items.size(); i++) {
             m_items[i] = std::stoi(saveData[9 + i]);
         }
     }
@@ -129,7 +129,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
 
 std::vector<std::string> GameData::saveToVector() {
     std::vector<std::string> saveData;
-    int si{9};
+    int si{ 9 };
     saveData.resize(9 + m_items.size());
     saveData[0] = m_userName;
     saveData[1] = std::to_string(m_turns);
@@ -140,7 +140,7 @@ std::vector<std::string> GameData::saveToVector() {
     saveData[6] = std::to_string(m_xp);
     saveData[7] = std::to_string(m_level);
     saveData[8] = "Items";
-    for (int i{0}; i < m_items.size(); i++) {
+    for (int i{ 0 }; i < m_items.size(); i++) {
         saveData[si] = std::to_string(m_items[i]);
         std::cout << si << '\n';
         std::cout << std::to_string(m_items[i]) << '\n';
