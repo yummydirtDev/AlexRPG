@@ -104,6 +104,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
 
     // Most of these have to be converted from string to integer with the stoi function
     if (saveData.size() < 7) {
+        // Just in case the save file is too small
         return 1;
     }
     m_turns = std::stoi(saveData[1]);
