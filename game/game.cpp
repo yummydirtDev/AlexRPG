@@ -12,12 +12,18 @@ GameData gameLoop(GameData data) {
             case 'y':
             case 'Y':
                 inputRecognized = true;
+                std::cout << "Alright! AlexRPG is an RPG where you play as Alex, on a journey to " << 
+                "destroy Googular, a biting allegory for corporate America.\n";
+                std::cout << "Rather than fight with weapons, you tell jokes. " <<
+                "The measure of joke-telling ability is called wit. To start out you have " <<
+                data.getWit() << " wit.\n";
                 break;
             case 'n':
             case 'N':
                 inputRecognized = true;
                 break;
             default:
+                std::cout << "Input not recognized, try again\n";
                 break;
             }
         }
