@@ -10,6 +10,9 @@ static int newGame(GameData data) {
         std::cout << "What do you want to name your player? (Blank for default) ";
         std::cin.ignore();
         std::getline (std::cin, newName);
+        if (newName == "") {
+            newName = "Alex";
+        }
         data.setUserName(newName);
         saveGame(data.saveToVector());
         std::cout << "Successfully overwrote the save file!\n";
@@ -36,7 +39,7 @@ GameData initGame() {
         switch (newOrOld) {
             case 'l':
             case 'L':
-                std::cout << "This feature has not been implemented yet, come back soon!" << std::endl;
+                std::cout << "Attempting to load the save file..." << std::endl;
                 inputRecognized = true;
                 if (data.loadFromVector(loadGame()) == 1) {
                     std::cout << "Game data could not be loaded, would you like to start a new game?\n";
@@ -44,6 +47,7 @@ GameData initGame() {
                         break;
                     }
                 } else {
+                    std::cout << "Game loaded successfully!\n";
                     break;
                 }
             case 'n':
