@@ -3,7 +3,9 @@
 int main() {
     // Intro and initialize
     GameData data{ initGame() };
-    data = gameLoop(data);
+    while (data.gameStatus == 0) {
+        data = gameLoop(data);
+    }
     // Game loop
         // check state
         // do move
