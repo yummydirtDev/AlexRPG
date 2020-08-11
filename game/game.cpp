@@ -7,7 +7,9 @@ static inline void tutorial(GameData *data) {
         "The measure of joke-telling ability is called wit. To start out you have " <<
         data->getWit() << " wit.\n";
     std::cout << "While there is no real violence from the attacking side, these jokes cause real damage. " <<
-        "The defending side will have real and gruesome injuries from these jokes.";
+        "The defending side will have real and gruesome injuries from these jokes.\n";
+    std::cout << "The defending side can attempt a comeback to reverse the damage, " <<
+    "but if it fails they lose the turn and take the damage.\n";
 }
 
 GameData gameLoop(GameData data) {
@@ -33,6 +35,8 @@ GameData gameLoop(GameData data) {
                 break;
             }
         }
+        std::cout << "Alright then! Let's begin. You find yourself in a ditch near downtown Phoenix, " <<
+        "the city skyline in the horizon\n";
     }
     return data;
 }
