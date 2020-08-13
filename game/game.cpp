@@ -36,7 +36,10 @@ GameData gameLoop(GameData data) {
             }
         }
         std::cout << "Alright then! Let's begin. You find yourself in a ditch near downtown Phoenix, " <<
-        "the city skyline in the horizon\n";
+        "the city skyline in the horizon.\n";
+        std::cout << "You spot a crappy microphone near you on the ground, " <<
+        "you pick it up just in case it might help.\n";
+        data.addItem(0);
     }
     return data;
 }

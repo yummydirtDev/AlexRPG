@@ -94,6 +94,10 @@ void GameData::setLevel(int level) {
     m_level = level;
 }
 
+void GameData::addItem(int itemID) {
+    m_items.resize(m_items.size() + 1, itemID);
+}
+
 /*
 This function essentially takes the save data from the vector and
 loads it into the object
