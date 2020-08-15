@@ -8,9 +8,7 @@
 #ifdef _WIN32
     std::string getSavePath() {
         std::string path{getenv("APPDATA")};
-        std::cout << path;
-        path = path + "\\AlexRPG\\.AlexRPG";
-        std::cout << path;
+        path = path + "\\.AlexRPG";
         return path;
     }
 #endif
