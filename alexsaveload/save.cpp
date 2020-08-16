@@ -1,5 +1,6 @@
 #include "saveload.h"
 
+// Set directory based on operating system
 #ifdef __linux__
     std::string getSavePath() {
         return std::string(getenv("HOME"))+"/.AlexRPG";
