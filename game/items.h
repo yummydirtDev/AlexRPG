@@ -13,6 +13,11 @@ private:
     int m_cost;
 public:
     Item(int id, int type, std::string name, int healing, int damage, int cost);
+    int getID();
+    std::string getName();
+    int getHealing();
+    int getDamage();
+    int getCost();
 };
 
 #endif // __ITEMS_H__
