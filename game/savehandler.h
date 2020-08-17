@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include "items.h"
 
 class GameData {
 private:
@@ -37,7 +38,7 @@ public:
     void setStoneface(int stoneface);
     void setXp(int xp);
     void setLevel(int level);
-    void addItem(int itemID);
+    void addItem(Item item);
     int loadFromVector(std::vector<std::string> saveData);
     std::vector<std::string> saveToVector();
 };

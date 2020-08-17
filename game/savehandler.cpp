@@ -94,8 +94,8 @@ void GameData::setLevel(int level) {
     m_level = level;
 }
 
-void GameData::addItem(int itemID) {
-    m_items.resize(m_items.size() + 1, itemID);
+void GameData::addItem(Item item) {
+    m_items.resize(m_items.size() + 1, item.getID());
 }
 
 /*

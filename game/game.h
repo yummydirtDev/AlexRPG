@@ -3,6 +3,7 @@
 
 #include "savehandler.h"
 #include "init.h"
+#include "items.h"
 
 GameData gameLoop(GameData data);
 
