@@ -13,7 +13,7 @@ static inline void tutorial(GameData *data) {
 }
 
 GameData gameLoop(GameData data) {
-    Item toyMic{0, 1, "Toy Microphone", 0, 5, 0};
+    Item toyMic{ 0, 1, "Toy Microphone", 0, 5, 0 };
     char yOrN;
     bool inputRecognized{ false };
     switch (data.getTurns()) {
