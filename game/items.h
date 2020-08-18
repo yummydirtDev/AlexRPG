@@ -12,7 +12,7 @@ private:
     int m_damage;
     int m_cost;
 public:
-    Item(int id, int type, std::string name, int healing, int damage, int cost);
+    Item(std::string name, int id, int type, int healing, int damage, int cost);
     int getID();
     std::string getName();
     int getHealing();

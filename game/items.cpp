@@ -1,6 +1,6 @@
 #include "items.h"
 
-Item::Item(int id, int type, std::string name, int healing, int damage, int cost) {
+Item::Item(std::string name, int id, int type, int healing, int damage, int cost) {
     m_id = id;
     m_type = type;
     m_name = name;
