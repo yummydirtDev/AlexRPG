@@ -120,7 +120,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     m_userName = saveData[0];
 
     // Most of these have to be converted from string to integer with the stoi function
-    if (saveData.size() < 7) {
+    if (saveData.size() < 8) {
         // Just in case the save file is too small
         return 1;
     }
