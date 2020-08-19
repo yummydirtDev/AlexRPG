@@ -34,6 +34,7 @@ public:
 class Items {
     public:
     Item toyMic{ "Toy Microphone", 0, 1, 0, 5, 0 };
+    Item searchID(int id);
 };
 
 #endif // __ITEMS_H__

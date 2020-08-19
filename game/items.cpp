@@ -30,3 +30,11 @@ int Item::getCost() {
 int Item::getType() {
     return m_type;
 }
+
+Item Items::searchID(int id) {
+    switch (id) {
+    case 0:
+        return toyMic;
+        break;
+    }
+}
