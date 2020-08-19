@@ -36,5 +36,8 @@ Item Items::searchID(int id) {
     case 0:
         return toyMic;
         break;
+    case 1:
+        return bandaid;
+        break;
     }
 }

@@ -34,6 +34,7 @@ public:
 class Items {
     public:
     Item toyMic{ "Toy Microphone", 0, 1, 0, 5, 0 };
+    Item bandaid{ "Bandaid", 1, 2, 15, 0, 5};
     Item searchID(int id);
 };
 
