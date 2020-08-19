@@ -1,31 +1,9 @@
 #include "init.h"
 
-static int newGame(GameData data) {
-    std::string confirm;
-    std::string newName;
-
-    std::cout << "This will erase your current save data. \nType confirm to confirm. \n";
-    std::cin >> confirm;
-    if (confirm == "confirm" || confirm == "Confirm") {
-        std::cout << "What do you want to name your player? (Blank for default) ";
-        std::cin.ignore();
-        std::getline(std::cin, newName);
-        if (newName == "") {
-            newName = "Alex";
-        }
-        data.setUserName(newName);
-        saveGame(data.saveToVector());
-        std::cout << "Successfully overwrote the save file!\n";
-        return 0;
-    }
-    else {
-        std::cout << "Confirm not typed" << '\n';
-        return 1;
-    }
-}
+static int newGame(GameData data);
 
 GameData initGame() {
-    // TODO: Load a save file
+    // This function (as the name suggests) initializes the game
 
     char newOrOld;
     std::vector<std::string> blankVector{ "0" };
@@ -65,4 +43,28 @@ GameData initGame() {
         }
     }
     return data;
+}
+
+static int newGame(GameData data) {
+    std::string confirm;
+    std::string newName;
+
+    std::cout << "This will erase your current save data. \nType confirm to confirm. \n";
+    std::cin >> confirm;
+    if (confirm == "confirm" || confirm == "Confirm") {
+        std::cout << "What do you want to name your player? (Blank for default) ";
+        std::cin.ignore();
+        std::getline(std::cin, newName);
+        if (newName == "") {
+            newName = "Alex";
+        }
+        data.setUserName(newName);
+        saveGame(data.saveToVector());
+        std::cout << "Successfully overwrote the save file!\n";
+        return 0;
+    }
+    else {
+        std::cout << "Confirm not typed" << '\n';
+        return 1;
+    }
 }
