@@ -1,5 +1,8 @@
 #include "game.h"
 
+// The game logic along with the main loop
+
+// I had to do this inline but honestly, this probably wasn't neccessary
 static inline void tutorial(GameData *data) {
     std::cout << "Alright! AlexRPG is an RPG where you play as Alex, on a journey to " <<
         "destroy Googular, a biting allegory for corporate America.\n";
@@ -13,10 +16,15 @@ static inline void tutorial(GameData *data) {
 }
 
 GameData gameLoop(GameData data) {
+    // Define the items
     Items items;
+    // Char used when user needs to decide yes or no
     char yOrN;
+    // bool used to avoid recursion (for whatever reason)
     bool inputRecognized{ false };
+    // Main turn checker
     switch (data.getTurns()) {
+    // If it is turn 0 give the user a tutorial
     case 0:
         std::cout << "You appear to be new to AlexRPG, would you like to hear how things work? (Y or N) ";
         while (!inputRecognized) {
@@ -40,6 +48,7 @@ GameData gameLoop(GameData data) {
         "the city skyline in the horizon.\n";
         std::cout << "You spot a crappy microphone near you on the ground, " <<
         "you pick it up just in case it might help.\n";
+        // The starting mic for the game
         data.addItem(items.toyMic);
     }
     return data;

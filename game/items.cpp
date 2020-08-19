@@ -1,5 +1,7 @@
 #include "items.h"
 
+// These are all the member functions for the Item class
+
 Item::Item(std::string name, int id, int type, int healing, int damage, int cost) {
     m_id = id;
     m_type = type;
