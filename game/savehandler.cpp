@@ -26,6 +26,7 @@ GameData::GameData() {
     m_stoneface = 5;
     m_xp = 0;
     m_level = 0;
+    m_cash = 0;
 }
 
 // After this is a set of standard set/get functions
@@ -62,6 +63,10 @@ int GameData::getLevel() {
     return m_level;
 }
 
+int GameData::getCash() {
+    return m_cash;
+}
+
 void GameData::setUserName(std::string userName) {
     m_userName = userName;
 }
@@ -94,6 +99,10 @@ void GameData::setLevel(int level) {
     m_level = level;
 }
 
+void GameData::setCash(int cash) {
+    m_cash = cash;
+}
+
 void GameData::addItem(Item item) {
     m_items.resize(m_items.size() + 1, item.getID());
     switch (item.getType()) {
@@ -122,14 +131,15 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     m_stoneface = std::stoi(saveData[5]);
     m_xp = std::stoi(saveData[6]);
     m_level = std::stoi(saveData[7]);
+    m_cash = std::stoi(saveData[8]);
 
     // This is a bit more complex since it is a vector to be loaded
 
-    if ((saveData.size() - 1) > 8) {
-        // Skip line 8 for future compatibility
-        m_items.resize(saveData.size() - 9);
+    if ((saveData.size() - 1) > 9) {
+        // Skip line 9 for future compatibility
+        m_items.resize(saveData.size() - 10);
         for (int i{ 0 }; i < m_items.size(); i++) {
-            m_items[i] = std::stoi(saveData[9 + i]);
+            m_items[i] = std::stoi(saveData[10 + i]);
         }
     }
     return 0;
@@ -137,8 +147,8 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
 
 std::vector<std::string> GameData::saveToVector() {
     std::vector<std::string> saveData;
-    int si{ 9 };
-    saveData.resize(9 + m_items.size());
+    int si{ 10 };
+    saveData.resize(10 + m_items.size());
     saveData[0] = m_userName;
     saveData[1] = std::to_string(m_turns);
     saveData[2] = std::to_string(m_maxHealth);
@@ -147,7 +157,8 @@ std::vector<std::string> GameData::saveToVector() {
     saveData[5] = std::to_string(m_stoneface);
     saveData[6] = std::to_string(m_xp);
     saveData[7] = std::to_string(m_level);
-    saveData[8] = "Items";
+    saveData[8] = std::to_string(m_cash);
+    saveData[9] = "Items";
     for (int i{ 0 }; i < m_items.size(); i++) {
         saveData[si] = std::to_string(m_items[i]);
         std::cout << si << '\n';

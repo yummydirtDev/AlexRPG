@@ -28,6 +28,7 @@ private:
     int m_stoneface;
     int m_xp;
     int m_level;
+    int m_cash;
 public:
     // A lot of constructors and get/set
     GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface, int xp, int level);
@@ -42,6 +43,7 @@ public:
     int getStoneface();
     int getXp();
     int getLevel();
+    int getCash();
     void setUserName(std::string userName);
     void setTurns(int turns);
     void setMaxHealth(int maxHealth);
@@ -50,6 +52,7 @@ public:
     void setStoneface(int stoneface);
     void setXp(int xp);
     void setLevel(int level);
+    void setCash(int cash);
     void addItem(Item item);
     // Save/Load mechanism
     int loadFromVector(std::vector<std::string> saveData);
