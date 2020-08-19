@@ -13,7 +13,7 @@ static inline void tutorial(GameData *data) {
 }
 
 GameData gameLoop(GameData data) {
-    Item toyMic{ "Toy Microphone", 0, 1, 0, 5, 0 };
+    Items items;
     char yOrN;
     bool inputRecognized{ false };
     switch (data.getTurns()) {
@@ -40,7 +40,7 @@ GameData gameLoop(GameData data) {
         "the city skyline in the horizon.\n";
         std::cout << "You spot a crappy microphone near you on the ground, " <<
         "you pick it up just in case it might help.\n";
-        data.addItem(toyMic);
+        data.addItem(items.toyMic);
     }
     return data;
 }
