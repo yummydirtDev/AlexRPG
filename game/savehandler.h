@@ -9,6 +9,17 @@
 
 class GameData {
 private:
+    /*
+    Explanation of member variables:
+    userName: the user's name
+    turns: the number of turns that has passed
+    maxHealth: the user's max health
+    currentHealth: the user's current health
+    wit: the user's "wit" or combat ability
+    stoneface: the user's defense capability
+    xp: the user's xp amount
+    level: the number of level's the user has acheived
+    */
     std::string m_userName;
     int m_turns;
     int m_maxHealth;
@@ -18,6 +29,7 @@ private:
     int m_xp;
     int m_level;
 public:
+    // A lot of constructors and get/set
     GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface, int xp, int level);
     GameData();
     int gameStatus{0};
@@ -39,6 +51,7 @@ public:
     void setXp(int xp);
     void setLevel(int level);
     void addItem(Item item);
+    // Save/Load mechanism
     int loadFromVector(std::vector<std::string> saveData);
     std::vector<std::string> saveToVector();
 };
