@@ -96,6 +96,10 @@ void GameData::setLevel(int level) {
 
 void GameData::addItem(Item item) {
     m_items.resize(m_items.size() + 1, item.getID());
+    switch (item.getType()) {
+        case 1:
+            std::cout << "You have acquired " << item.getName() << "!\n";
+    }
 }
 
 /*

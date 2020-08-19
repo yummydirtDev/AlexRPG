@@ -24,6 +24,7 @@ public:
     // A bunch of get functions
     int getID();
     std::string getName();
+    int getType();
     int getHealing();
     int getDamage();
     int getCost();

@@ -26,3 +26,7 @@ int Item::getHealing() {
 int Item::getCost() {
     return m_cost;
 }
+
+int Item::getType() {
+    return m_type;
+}
