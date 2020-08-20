@@ -3,17 +3,9 @@
 // The game logic along with the main loop
 
 // I had to do this inline but honestly, this probably wasn't neccessary
-static inline void tutorial(GameData *data) {
-    std::cout << "Alright! AlexRPG is an RPG where you play as Alex, on a journey to " <<
-        "destroy Googular, a biting allegory for corporate America.\n";
-    std::cout << "Rather than fight with weapons, you tell jokes. " <<
-        "The measure of joke-telling ability is called wit. To start out you have " <<
-        data->getWit() << " wit.\n";
-    std::cout << "While there is no real violence from the attacking side, these jokes cause real damage. " <<
-        "The defending side will have real and gruesome injuries from these jokes.\n";
-    std::cout << "The defending side can attempt a comeback to reverse the damage, " <<
-    "but if it fails they lose the turn and take the damage.\n";
-}
+static inline void tutorial(GameData *data);
+
+static char turnChoice();
 
 GameData gameLoop(GameData data) {
     // Define the items
@@ -52,4 +44,20 @@ GameData gameLoop(GameData data) {
         data.addItem(items.toyMic);
     }
     return data;
+}
+
+static char turnChoice() {
+    return 'y';
+}
+
+static inline void tutorial(GameData *data) {
+    std::cout << "Alright! AlexRPG is an RPG where you play as Alex, on a journey to " <<
+        "destroy Googular, a biting allegory for corporate America.\n";
+    std::cout << "Rather than fight with weapons, you tell jokes. " <<
+        "The measure of joke-telling ability is called wit. To start out you have " <<
+        data->getWit() << " wit.\n";
+    std::cout << "While there is no real violence from the attacking side, these jokes cause real damage. " <<
+        "The defending side will have real and gruesome injuries from these jokes.\n";
+    std::cout << "The defending side can attempt a comeback to reverse the damage, " <<
+    "but if it fails they lose the turn and take the damage.\n";
 }
