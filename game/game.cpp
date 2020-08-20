@@ -47,6 +47,34 @@ GameData gameLoop(GameData data) {
 }
 
 static char turnChoice() {
+    char input;
+    bool inputRecognized{ false };
+    std::cout << "Would you like to (I) Check Inventory, (S) Check Status, or (Q) Quit\n";
+    std::cin >> input;
+    while (!inputRecognized) {
+        switch (input) {
+        case 'I':
+        case 'i':
+            // Check inventory
+            inputRecognized = true;
+            return 'I';
+            break;
+        case 'S':
+        case 's':
+            // Check status
+            inputRecognized = true;
+            return 'S';
+            break;
+        case 'Q':
+        case 'q':
+            // Quit
+            inputRecognized = true;
+            break;
+        default:
+            std::cout << "Input not recognized! Please try again.\n";
+            break;
+        }
+    }
     return 'y';
 }
 

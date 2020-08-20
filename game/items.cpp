@@ -40,4 +40,5 @@ Item Items::searchID(int id) {
         return bandaid;
         break;
     }
+    return toyMic;
 }
