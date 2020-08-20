@@ -44,6 +44,11 @@ GameData gameLoop(GameData data) {
         // The starting mic for the game
         data.addItem(items.toyMic);
         decision = turnChoice();
+        switch (decision) {
+            case 'I':
+            // todo: check inventory
+            break;
+        }
     }
     return data;
 }
