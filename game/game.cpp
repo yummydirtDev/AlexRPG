@@ -48,6 +48,13 @@ GameData gameLoop(GameData data) {
             case 'I':
             // todo: check inventory
             break;
+            case 'S':
+            // todo: check status
+            break;
+            case 'y':
+            std::cout << "Come back soon!\n";
+            data.gameStatus = 1;
+            break;
         }
     }
     return data;
