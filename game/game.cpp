@@ -12,6 +12,7 @@ GameData gameLoop(GameData data) {
     Items items;
     // Char used when user needs to decide yes or no
     char yOrN;
+    char decision;
     // bool used to avoid recursion (for whatever reason)
     bool inputRecognized{ false };
     // Main turn checker
@@ -42,6 +43,7 @@ GameData gameLoop(GameData data) {
         "you pick it up just in case it might help.\n";
         // The starting mic for the game
         data.addItem(items.toyMic);
+        decision = turnChoice();
     }
     return data;
 }
