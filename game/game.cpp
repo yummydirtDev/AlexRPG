@@ -37,6 +37,7 @@ GameData gameLoop(GameData data) {
                 break;
             }
         }
+        std::cout << '\n';
         std::cout << "Alright then! Let's begin. You find yourself in a ditch near downtown Phoenix, " <<
         "the city skyline in the horizon.\n";
         std::cout << "You spot a crappy microphone near you on the ground, " <<
