@@ -15,7 +15,7 @@
 void saveGame(std::vector<std::string> dataList) {
     getSavePath();
     std::ofstream saveFile{ getSavePath() };
-    for (int i{ 0 }; i < dataList.size(); i++) {
+    for (long unsigned int i{ 0 }; i < dataList.size(); i++) {
         saveFile << dataList[i] << '\n';
     }
     saveFile.close();

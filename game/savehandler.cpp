@@ -138,7 +138,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
     if ((saveData.size() - 1) > 9) {
         // Skip line 9 for future compatibility
         m_items.resize(saveData.size() - 10);
-        for (int i{ 0 }; i < m_items.size(); i++) {
+        for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
             m_items[i] = std::stoi(saveData[10 + i]);
         }
     }
@@ -159,7 +159,7 @@ std::vector<std::string> GameData::saveToVector() {
     saveData[7] = std::to_string(m_level);
     saveData[8] = std::to_string(m_cash);
     saveData[9] = "Items";
-    for (int i{ 0 }; i < m_items.size(); i++) {
+    for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
         saveData[si] = std::to_string(m_items[i]);
         std::cout << si << '\n';
         std::cout << std::to_string(m_items[i]) << '\n';
