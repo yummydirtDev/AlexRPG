@@ -13,5 +13,5 @@ AlexRPG is a text-based linear RPG game where youcan fight enemies, get stronger
 Available on Windows and Linux
 Code by Alex Frutkin 
 Ideas by Alex Frutkin and Sam Frutkin
-Readme by Sam Frutkin
-Subscribe to Yummydirt on Youtube.
+Readme by Alex Frutkin and Sam Frutkin
+Subscribe to yummydirt on Youtube.
