@@ -68,9 +68,9 @@ static char turnChoice() {
     bool inputRecognized{ false };
     std::cout << "Would you like to " << red << "(N)" << magenta << 
     " Next Turn" << reset << ", " << red << "(I)" << magenta << 
-    " Check Inventory" << reset << "," << red << " (S)" << magenta << 
-    " Check Status" << reset << ", or " << red << "(Q)" << magenta <<
-    " Quit\n" << reset;
+    " Inventory" << reset << "," << red << " (S)" << magenta << 
+    " Status" << reset << ", or " << red << "(Q)" << magenta <<
+    " Quit " << reset;
     std::cin >> input;
     while (!inputRecognized) {
         switch (input) {
