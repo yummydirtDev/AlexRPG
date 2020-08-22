@@ -45,19 +45,28 @@ GameData gameLoop(GameData data) {
         "you pick it up just in case it might help.\n";
         // The starting mic for the game
         data.addItem(items.toyMic);
-        decision = turnChoice();
-        switch (decision) {
+        inputRecognized = false;
+        while (!inputRecognized) {
+            decision = turnChoice();
+            switch (decision) {
+            case 'N':
+                inputRecognized = true;
+                data.setTurns(data.getTurns() + 1);
+                break;
             case 'I':
-            // todo: check inventory
-            break;
+                // todo: check inventory
+                break;
             case 'S':
-            // todo: check status
-            data.checkStatus();
-            break;
+                // todo: check status
+                data.checkStatus();
+                break;
             case 'y':
-            std::cout << "Come back soon!\n";
-            data.gameStatus = 1;
-            break;
+                inputRecognized = true;
+                std::cout << "Come back soon!\n";
+                data.setTurns(data.getTurns() + 1);
+                data.gameStatus = 1;
+                break;
+            }
         }
     }
     return data;
@@ -74,6 +83,11 @@ static char turnChoice() {
     std::cin >> input;
     while (!inputRecognized) {
         switch (input) {
+        case 'N':
+        case 'n':
+            inputRecognized = true;
+            return 'N';
+            break;
         case 'I':
         case 'i':
             // Check inventory
