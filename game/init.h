@@ -9,6 +9,7 @@
 #include <limits>
 #include "../alexsaveload/saveload.h"
 #include "savehandler.h"
+#include "color.h"
 
 GameData initGame();
 

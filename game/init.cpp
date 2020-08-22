@@ -12,7 +12,9 @@ GameData initGame() {
 
     std::cout << "Welcome to AlexRPG" << '\n';
     while (!inputRecognized) {
-        std::cout << "Would you like to (l)oad a save or start a (n)ew adventure? ";
+        std::cout << "Would you like to " << red << "(l)" << magenta <<
+        "oad a save" << reset << " or" << magenta << " start a " << red <<
+        "(n)" << magenta << "ew adventure" << reset << "? ";
         std::cin >> newOrOld;
         std::cout << '\n';
         switch (newOrOld) {
