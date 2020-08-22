@@ -19,7 +19,8 @@ GameData gameLoop(GameData data) {
     switch (data.getTurns()) {
     // If it is turn 0 give the user a tutorial
     case 0:
-        std::cout << "You appear to be new to AlexRPG, would you like to hear how things work? (Y or N) ";
+        std::cout << "You appear to be new to AlexRPG, would you like to hear how things work? " <<
+        red << "(Y or N) " << reset;
         while (!inputRecognized) {
             std::cin >> yOrN;
             switch (yOrN) {
@@ -65,7 +66,11 @@ GameData gameLoop(GameData data) {
 static char turnChoice() {
     char input;
     bool inputRecognized{ false };
-    std::cout << "Would you like to (I) Check Inventory, (S) Check Status, or (Q) Quit\n";
+    std::cout << "Would you like to " << red << "(N)" << magenta << 
+    " Next Turn" << reset << ", " << red << "(I)" << magenta << 
+    " Check Inventory" << reset << "," << red << " (S)" << magenta << 
+    " Check Status" << reset << ", or " << red << "(Q)" << magenta <<
+    " Quit\n" << reset;
     std::cin >> input;
     while (!inputRecognized) {
         switch (input) {
