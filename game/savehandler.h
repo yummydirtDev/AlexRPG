@@ -6,6 +6,7 @@
 #include <string>
 #include <algorithm>
 #include "items.h"
+#include "color.h"
 
 class GameData {
 private:
@@ -57,6 +58,8 @@ public:
     // Save/Load mechanism
     int loadFromVector(std::vector<std::string> saveData);
     std::vector<std::string> saveToVector();
+    // Check the players status
+    void checkStatus();
 };
 
 #endif // __SAVEHANDLER_H__

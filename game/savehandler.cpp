@@ -107,7 +107,7 @@ void GameData::addItem(Item item) {
     m_items.resize(m_items.size() + 1, item.getID());
     switch (item.getType()) {
         case 1:
-            std::cout << "You have acquired " << item.getName() << "!\n";
+            std::cout << "You have acquired " << green << item.getName() << reset << "!\n";
     }
 }
 
@@ -166,4 +166,15 @@ std::vector<std::string> GameData::saveToVector() {
         si++;
     }
     return saveData;
+}
+
+void GameData::checkStatus() {
+    char blue[] = { 0x1b, '[', '1', ';', '3', '4', 'm', 0 };
+    char normal[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };
+    std::cout << blue << "Name: " << normal << m_userName << '\n';
+    std::cout << blue << "Health: " << normal << m_currentHealth <<
+    " / " << m_maxHealth << '\n';
+    std::cout << blue << "Wit: " << normal << m_wit << '\n';
+    std::cout << blue << "Stoneface: " << normal << m_stoneface << '\n';
+    std::cout << blue << "Cash: " << normal << m_cash << " DirtBux\n";
 }
