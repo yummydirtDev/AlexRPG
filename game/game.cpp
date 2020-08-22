@@ -52,6 +52,7 @@ GameData gameLoop(GameData data) {
             case 'N':
                 inputRecognized = true;
                 data.setTurns(data.getTurns() + 1);
+                saveGame(data.saveToVector());
                 break;
             case 'I':
                 // todo: check inventory
@@ -64,6 +65,7 @@ GameData gameLoop(GameData data) {
                 inputRecognized = true;
                 std::cout << "Come back soon!\n";
                 data.setTurns(data.getTurns() + 1);
+                saveGame(data.saveToVector());
                 data.gameStatus = 1;
                 break;
             }
