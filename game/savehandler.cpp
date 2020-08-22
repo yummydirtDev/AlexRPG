@@ -161,8 +161,6 @@ std::vector<std::string> GameData::saveToVector() {
     saveData[9] = "Items";
     for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
         saveData[si] = std::to_string(m_items[i]);
-        std::cout << si << '\n';
-        std::cout << std::to_string(m_items[i]) << '\n';
         si++;
     }
     return saveData;
