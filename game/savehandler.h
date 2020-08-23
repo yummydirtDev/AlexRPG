@@ -60,6 +60,7 @@ public:
     std::vector<std::string> saveToVector();
     // Check the players status
     void checkStatus();
+    void checkInventory(Items items);
 };
 
 #endif // __SAVEHANDLER_H__

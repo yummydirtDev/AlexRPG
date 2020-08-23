@@ -176,3 +176,24 @@ void GameData::checkStatus() {
     std::cout << blue << "Stoneface: " << normal << m_stoneface << '\n';
     std::cout << blue << "Cash: " << normal << m_cash << " DirtBux\n";
 }
+
+void GameData::checkInventory(Items items) {
+    char blue[] = { 0x1b, '[', '1', ';', '3', '4', 'm', 0 };
+    char normal[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };
+    std::vector<std::string> weaponList{};
+    std::vector<std::string> healList{};
+    std::cout << blue << "Cash: " << normal << m_cash << '\n';
+    for (long unsigned int i{0}; i < m_items.size(); i++) {
+        Item currentItem = items.searchID(m_items[i]);
+        switch (currentItem.getType()) {
+        case 1:
+            if ( !(std::find(weaponList.begin(), weaponList.end(), currentItem.getName()) != weaponList.end()) ) {
+                weaponList.resize(weaponList.size() + 1, currentItem.getName());
+            }
+            break;
+        case 2:
+            healList.resize(healList.size() + 1, currentItem.getName());
+            break;
+        }
+    }
+}

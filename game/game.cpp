@@ -58,7 +58,6 @@ GameData gameLoop(GameData data) {
                 // todo: check inventory
                 break;
             case 'S':
-                // todo: check status
                 data.checkStatus();
                 break;
             case 'y':
