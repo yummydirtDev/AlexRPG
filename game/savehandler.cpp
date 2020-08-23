@@ -200,4 +200,8 @@ void GameData::checkInventory(Items items) {
     for (long unsigned int i{0}; i < weaponList.size(); i++) {
         std::cout << blue << weaponList[i] << '\n' << normal;
     }
+    std::cout << green << "Healing Items:\n" << normal;
+    for (long unsigned int i{0}; i < healList.size(); i++) {
+    	std::cout << blue << healList[i] << '\n' << normal;
+    }
 }
