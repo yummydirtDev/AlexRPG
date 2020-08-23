@@ -9,6 +9,7 @@
   # the build target executable:
   TARGET = alexrpg
 
+  # the source code files
   STUFF = ./game/*.cpp ./alexsaveload/*.cpp
 
   all: $(TARGET)
