@@ -196,4 +196,8 @@ void GameData::checkInventory(Items items) {
             break;
         }
     }
+    std::cout << green << "Weapons:\n" << normal;
+    for (long unsigned int i{0}; i < weaponList.size(); i++) {
+        std::cout << blue << weaponList[i] << '\n' << normal;
+    }
 }
