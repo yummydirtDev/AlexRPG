@@ -4,6 +4,8 @@
 class Enemy {
 private:
     int m_health;
+    int m_wit;
+    int m_stoneface;
 };
 
 #endif // __COMBAT_H__
