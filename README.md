@@ -9,7 +9,7 @@ A text-based RPG
 
 Currently in development
 
-AlexRPG is a text-based linear RPG game where youcan fight enemies, get stronger, and conquer the competition. It's currently under development by Alex Frutkin of Yummydirtdev with help from Sam Frutkin of Yummydirtdev. This game was programmed in C++. Download the game and have fun to support this independent developer.
+AlexRPG is a text-based linear RPG game where you can fight enemies, get stronger, and conquer the competition. It's currently under development by Alex Frutkin of Yummydirtdev with help from Sam Frutkin of Yummydirtdev. This game was programmed in C++. Download the game and have fun to support this independent developer.
 Available on Windows and Linux
 Code by Alex Frutkin 
 Ideas by Alex Frutkin and Sam Frutkin
