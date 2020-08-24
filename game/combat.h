@@ -3,6 +3,7 @@
 
 class Enemy {
 private:
+    int m_name;
     int m_health;
     int m_wit;
     int m_stoneface;
