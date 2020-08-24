@@ -7,12 +7,13 @@ static inline void tutorial(GameData *data);
 
 static char turnChoice();
 
+static inline GameData endChoice(GameData data, Items items);
+
 GameData gameLoop(GameData data) {
     // Define the items
     Items items;
     // Char used when user needs to decide yes or no
     char yOrN;
-    char decision;
     // bool used to avoid recursion (for whatever reason)
     bool inputRecognized{ false };
     // Main turn checker
@@ -45,31 +46,7 @@ GameData gameLoop(GameData data) {
         "you pick it up just in case it might help.\n";
         // The starting mic for the game
         data.addItem(items.toyMic);
-        inputRecognized = false;
-        while (!inputRecognized) {
-            decision = turnChoice();
-            switch (decision) {
-            case 'N':
-                inputRecognized = true;
-                data.setTurns(data.getTurns() + 1);
-                saveGame(data.saveToVector());
-                break;
-            case 'I':
-                // todo: check inventory
-                data.checkInventory(items);
-                break;
-            case 'S':
-                data.checkStatus();
-                break;
-            case 'y':
-                inputRecognized = true;
-                std::cout << "Come back soon!\n";
-                data.setTurns(data.getTurns() + 1);
-                saveGame(data.saveToVector());
-                data.gameStatus = 1;
-                break;
-            }
-        }
+        endChoice(data, items);
     }
     return data;
 }
@@ -113,6 +90,36 @@ static char turnChoice() {
         }
     }
     return 'y';
+}
+
+static inline GameData endChoice(GameData data, Items items) {
+    bool inputRecognized{false};
+    char decision;
+    while (!inputRecognized) {
+        decision = turnChoice();
+        switch (decision) {
+        case 'N':
+            inputRecognized = true;
+            data.setTurns(data.getTurns() + 1);
+            saveGame(data.saveToVector());
+            break;
+        case 'I':
+            // todo: check inventory
+            data.checkInventory(items);
+            break;
+        case 'S':
+            data.checkStatus();
+            break;
+        case 'y':
+            inputRecognized = true;
+            std::cout << "Come back soon!\n";
+            data.setTurns(data.getTurns() + 1);
+            saveGame(data.saveToVector());
+            data.gameStatus = 1;
+            break;
+        }
+    }
+    return data;
 }
 
 static inline void tutorial(GameData *data) {
