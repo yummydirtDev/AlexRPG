@@ -1,12 +1,13 @@
 #include "combat.h"
 
-Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines) {
+Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines, std::vector<std::string> uLines) {
     m_name = name;
     m_health = health;
     m_wit = wit;
     m_stoneface = stoneface;
     m_xpGiven = xpGiven;
     enemyLines = lines;
+    userLines = uLines;
 }
 
 std::string Enemy::getName() {

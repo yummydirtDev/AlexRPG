@@ -13,7 +13,8 @@ private:
     int m_xpGiven;
 public:
     std::vector<std::string> enemyLines;
-    Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines);
+    std::vector<std::string> userLines;
+    Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> eLines, std::vector<std::string> uLines);
     std::string getName();
     int getHealth();
     int getWit();
