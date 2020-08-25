@@ -1,5 +1,7 @@
 # Contributing
 
+We encourage anybody to contribute, no matter how small!
+
 To contribute to AlexRPG, make a fork, make your changes and make a descriptive pull request.
 
 ## Style
