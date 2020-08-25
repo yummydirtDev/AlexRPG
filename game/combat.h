@@ -27,7 +27,12 @@ public:
     std::vector<std::string> userLines {
         "Let me get my sharpie",
         "Gangnam Style!",
-        "You look like someone who would leave their hot pockets in the microwave"
+        "You look like someone who would leave their hot pockets in the microwave",
+        "Piggy goes oink. *OINK OINK*",
+        "What's the deal with sunglasses?",
+        "Mickey, my friend!",
+        "Enough! Absolutely no more!",
+        "Complete and utter silence"
     };
     std::vector<std::string> samELines {
         "Yo mama so fat that she is over 150 pounds!",
