@@ -30,5 +30,7 @@ int Enemy::getXpGiven() {
 }
 
 GameData Enemies::fight(Enemy enemy, GameData data) {
+    using Random = effolkronium::random_static;
+    std::cout << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size()))];
     return data;
 }

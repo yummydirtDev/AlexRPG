@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "savehandler.h"
+#include "random.hpp"
 
 class Enemy {
 private:
