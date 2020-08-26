@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include "savehandler.h"
 
 class Enemy {
 private:
@@ -24,6 +25,7 @@ public:
 
 class Enemies {
 public:
+    GameData fight(Enemy enemy, GameData data);
     std::vector<std::string> userLines {
         "Let me get my sharpie",
         "Gangnam Style!",
