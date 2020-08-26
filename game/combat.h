@@ -32,12 +32,17 @@ public:
         "What's the deal with sunglasses?",
         "Mickey, my friend!",
         "Enough! Absolutely no more!",
-        "Complete and utter silence"
+        "Complete and utter silence",
+        "You have small thighs",
+        "*Vroom vroom* Sorry, that's my very expensive car!",
+        "*Coughs* Sorry but I've got a case of the 'vid",
+        "As Bill Cosby once said:"
     };
     std::vector<std::string> samELines {
         "Yo mama so fat that she is over 150 pounds!",
         "Two guys walk into a bar, they get a concussion",
-        "Mah dog!"
+        "Mah dog!",
+        "The bar had to be shut down after CTE concerns"
     };
 };
 
