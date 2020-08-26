@@ -28,3 +28,7 @@ int Enemy::getStoneface() {
 int Enemy::getXpGiven() {
     return m_xpGiven;
 }
+
+GameData Enemies::fight(Enemy enemy, GameData data) {
+    return data;
+}
