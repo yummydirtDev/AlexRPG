@@ -44,6 +44,7 @@ public:
         "Mah dog!",
         "The bar had to be shut down after CTE concerns"
     };
+    Enemy sam{"Sam", 20, 2, 2, 50, samELines};
 };
 
 #endif // __COMBAT_H__
