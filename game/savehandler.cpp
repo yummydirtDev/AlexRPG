@@ -167,8 +167,6 @@ std::vector<std::string> GameData::saveToVector() {
 }
 
 void GameData::checkStatus() {
-    char blue[] = { 0x1b, '[', '1', ';', '3', '4', 'm', 0 };
-    char normal[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };
     std::cout << blue << "Name: " << normal << m_userName << '\n';
     std::cout << blue << "Health: " << normal << m_currentHealth <<
     " / " << m_maxHealth << '\n';
@@ -178,8 +176,6 @@ void GameData::checkStatus() {
 }
 
 void GameData::checkInventory(Items items) {
-    char blue[] = { 0x1b, '[', '1', ';', '3', '4', 'm', 0 };
-    char normal[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };
     std::vector<std::string> weaponList{};
     std::vector<std::string> healList{};
     std::cout << blue << "Cash: " << normal << m_cash << '\n';

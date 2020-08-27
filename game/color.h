@@ -9,4 +9,6 @@ const std::string yellow("\033[1;33m");
 const std::string cyan("\033[0;36m");
 const std::string magenta("\033[0;35m");
 const std::string reset("\033[0m");
+char blue[] = { 0x1b, '[', '1', ';', '3', '4', 'm', 0 };
+char normal[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };
 #endif // __COLOR_H__

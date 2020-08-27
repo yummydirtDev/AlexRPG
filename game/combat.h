@@ -5,6 +5,7 @@
 #include <string>
 #include "savehandler.h"
 #include "random.hpp"
+#include "color.h"
 
 class Enemy {
 private:
