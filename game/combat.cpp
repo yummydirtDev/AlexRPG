@@ -39,7 +39,8 @@ GameData Enemies::fight(Enemy enemy, GameData data) {
     enemy.getName() << reset << ".\n";
 
     while (enemyHealth > 0 && data.getCurrentHealth() > 0) {
-        std::cout << "Would you like to" << red << " (F) " << magenta << "Fight";
+        std::cout << "Would you like to" << red << " (F) " << magenta << "Fight, " <<
+        red << "";
     }
 
     std::cout << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size()))];
