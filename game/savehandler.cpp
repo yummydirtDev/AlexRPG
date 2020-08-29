@@ -167,18 +167,18 @@ std::vector<std::string> GameData::saveToVector() {
 }
 
 void GameData::checkStatus() {
-    std::cout << blue << "Name: " << normal << m_userName << '\n';
-    std::cout << blue << "Health: " << normal << m_currentHealth <<
+    std::cout << blue << "Name: " << reset << m_userName << '\n';
+    std::cout << blue << "Health: " << reset << m_currentHealth <<
     " / " << m_maxHealth << '\n';
-    std::cout << blue << "Wit: " << normal << m_wit << '\n';
-    std::cout << blue << "Stoneface: " << normal << m_stoneface << '\n';
-    std::cout << blue << "Cash: " << normal << m_cash << " DirtBux\n";
+    std::cout << blue << "Wit: " << reset << m_wit << '\n';
+    std::cout << blue << "Stoneface: " << reset << m_stoneface << '\n';
+    std::cout << blue << "Cash: " << reset << m_cash << " DirtBux\n";
 }
 
 void GameData::checkInventory(Items items) {
     std::vector<std::string> weaponList{};
     std::vector<std::string> healList{};
-    std::cout << blue << "Cash: " << normal << m_cash << '\n';
+    std::cout << blue << "Cash: " << reset << m_cash << '\n';
     for (long unsigned int i{0}; i < m_items.size(); i++) {
         Item currentItem = items.searchID(m_items[i]);
         switch (currentItem.getType()) {
@@ -192,12 +192,12 @@ void GameData::checkInventory(Items items) {
             break;
         }
     }
-    std::cout << green << "Weapons:\n" << normal;
+    std::cout << green << "Weapons:\n" << reset;
     for (long unsigned int i{0}; i < weaponList.size(); i++) {
-        std::cout << blue << weaponList[i] << '\n' << normal;
+        std::cout << blue << weaponList[i] << '\n' << reset;
     }
-    std::cout << green << "Healing Items:\n" << normal;
+    std::cout << green << "Healing Items:\n" << reset;
     for (long unsigned int i{0}; i < healList.size(); i++) {
-    	std::cout << blue << healList[i] << '\n' << normal;
+    	std::cout << blue << healList[i] << '\n' << reset;
     }
 }

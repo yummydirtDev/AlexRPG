@@ -6,6 +6,7 @@
 #include "savehandler.h"
 #include "random.hpp"
 #include "color.h"
+#include "items.h"
 
 class Enemy {
 private:
@@ -27,7 +28,7 @@ public:
 
 class Enemies {
 public:
-    GameData fight(Enemy enemy, GameData data);
+    GameData fight(Enemy enemy, GameData data, Items items);
     std::vector<std::string> userLines {
         "Let me get my sharpie",
         "Gangnam Style!",

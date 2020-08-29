@@ -29,10 +29,11 @@ int Enemy::getXpGiven() {
     return m_xpGiven;
 }
 
-GameData Enemies::fight(Enemy enemy, GameData data) {
+GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
     using Random = effolkronium::random_static;
 
     int enemyHealth = enemy.getHealth();
+    char userChoice;
 
     std::cout << "Battle between " << blue << data.getUserName() << " " << red <<
     "(Level " << data.getLevel() << ") " << reset << "and " << blue <<
@@ -44,6 +45,22 @@ GameData Enemies::fight(Enemy enemy, GameData data) {
         red << "(C) " << magenta << "Prepare for comeback" << reset << ", " <<
         red << "(I) " << magenta << "Inventory" << reset << ", " <<
         red << "(S) " << magenta << "Check Status" << reset;
+        std::cin >> userChoice;
+	switch (userChoice) {
+	case 'J':
+	case 'j':
+            // TODO: Add joke telling ability
+        case 'C':
+        case 'c':
+            // Same TODO as before
+        case 'I':
+        case 'i':
+            // TODO: Add item using ability
+            data.checkInventory(items);
+        case 'S':
+        case 's':
+            data.checkStatus();
+	}
     }
 
     std::cout << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size()))];
