@@ -46,9 +46,9 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         red << "(I) " << magenta << "Inventory" << reset << ", " <<
         red << "(S) " << magenta << "Check Status" << reset;
         std::cin >> userChoice;
-	switch (userChoice) {
-	case 'J':
-	case 'j':
+	    switch (userChoice) {
+	    case 'J':
+	    case 'j':
             // TODO: Add joke telling ability
         case 'C':
         case 'c':
@@ -60,8 +60,8 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         case 'S':
         case 's':
             data.checkStatus();
-	}
-	// Do enemy turn and make them tell a joke
+	    }
+	    // Do enemy turn and make them tell a joke
     }
 
     std::cout << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size()))];
