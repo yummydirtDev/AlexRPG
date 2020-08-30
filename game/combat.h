@@ -29,6 +29,18 @@ public:
 class Enemies {
 public:
     GameData fight(Enemy enemy, GameData data, Items items);
+    std::vector<std::string> painLines {
+        "kneecaps pop off and land 50 miles away",
+        "leg breaks in two",
+        "neck says bye bye"
+    };
+    std::vector<std::string> hurtLines {
+        "Ow, my knees! My spindly, spindly knees!",
+        "ZOINKS!",
+        "Owie!",
+        "The pain is immense",
+        "Oh crap my nose fell off"
+    };
     std::vector<std::string> userLines {
         "Let me get my sharpie",
         "Gangnam Style!",
@@ -47,7 +59,8 @@ public:
         "Yo mama so fat that she is over 150 pounds!",
         "Two guys walk into a bar, they get a concussion",
         "Mah dog!",
-        "The bar had to be shut down after CTE concerns"
+        "The bar had to be shut down after CTE concerns",
+        "Yo mama got brain trauma from a bar"
     };
     Enemy sam{"Sam", 20, 2, 2, 50, samELines};
 };
