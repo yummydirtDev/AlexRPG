@@ -32,7 +32,9 @@ public:
     std::vector<std::string> painLines {
         "kneecaps pop off and land 50 miles away",
         "leg breaks in two",
-        "neck says bye bye"
+        "neck says bye bye",
+        "elbows go inverted",
+        "eyes are stuck crossed"
     };
     std::vector<std::string> hurtLines {
         "Ow, my knees! My spindly, spindly knees!",
