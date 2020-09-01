@@ -51,7 +51,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
 	    case 'J':
 	    case 'j':
             // TODO: Add joke telling ability
-            std::cout << userLines[Random::get(0, int(userLines.size()))];
+            std::cout << userLines[Random::get(0, int(userLines.size()))] << '\n';
             break;
         case 'C':
         case 'c':
