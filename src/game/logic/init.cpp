@@ -1,6 +1,6 @@
 #include "init.h"
 
-static int newGame(GameData data);
+static int newGame(GameData *data);
 
 GameData initGame() {
     // This function (as the name suggests) initializes the game
@@ -24,7 +24,7 @@ GameData initGame() {
             inputRecognized = true;
             if (data.loadFromVector(loadGame()) == 1) {
                 std::cout << "Game data could not be loaded, would you like to start a new game?\n";
-                if (newGame(data) == 0) {
+                if (newGame(&data) == 0) {
                     break;
                 }
             }
@@ -34,7 +34,7 @@ GameData initGame() {
             }
         case 'n':
         case 'N':
-            if (newGame(data) == 0) {
+            if (newGame(&data) == 0) {
                 inputRecognized = true;
                 break;
             }
@@ -47,7 +47,7 @@ GameData initGame() {
     return data;
 }
 
-static int newGame(GameData data) {
+static int newGame(GameData *data) {
     std::string confirm;
     std::string newName;
 
@@ -60,8 +60,8 @@ static int newGame(GameData data) {
         if (newName == "") {
             newName = "Alex";
         }
-        data.setUserName(newName);
-        saveGame(data.saveToVector());
+        data->setUserName(newName);
+        saveGame(data->saveToVector());
         std::cout << "Successfully overwrote the save file!\n";
         return 0;
     }

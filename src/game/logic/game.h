@@ -4,6 +4,7 @@
 #include "../systems/savehandler.h"
 #include "init.h"
 #include "../systems/items.h"
+#include "../systems/combat.h"
 
 GameData gameLoop(GameData data);
 

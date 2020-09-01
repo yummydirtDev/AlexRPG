@@ -44,7 +44,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         red << "(J) " << magenta << "Joke" << reset << ", " <<
         red << "(C) " << magenta << "Prepare for comeback" << reset << ", " <<
         red << "(I) " << magenta << "Inventory" << reset << ", " <<
-        red << "(S) " << magenta << "Check Status" << reset;
+        red << "(S) " << magenta << "Check Status " << reset;
         std::cin >> userChoice;
 	    switch (userChoice) {
 	    case 'J':

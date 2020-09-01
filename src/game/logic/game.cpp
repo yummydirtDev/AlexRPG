@@ -10,8 +10,9 @@ static char turnChoice();
 static inline GameData endChoice(GameData data, Items items);
 
 GameData gameLoop(GameData data) {
-    // Define the items
+    // Define the items and enemies
     Items items;
+    Enemies enemies;
     // Char used when user needs to decide yes or no
     char yOrN;
     // bool used to avoid recursion (for whatever reason)
@@ -47,6 +48,8 @@ GameData gameLoop(GameData data) {
         // The starting mic for the game
         data.addItem(items.toyMic);
         endChoice(data, items);
+    case 1:
+        enemies.fight(enemies.sam, data, items);
     }
     return data;
 }
