@@ -23,6 +23,10 @@ int Item::getHealing() {
     return m_healing;
 }
 
+int Item::getDamage() {
+    return m_damage;
+}
+
 int Item::getCost() {
     return m_cost;
 }

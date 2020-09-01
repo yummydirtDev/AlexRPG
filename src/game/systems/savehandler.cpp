@@ -111,6 +111,11 @@ void GameData::addItem(Item item) {
     }
 }
 
+void GameData::removeItem(Item item) {
+    std::vector<int>::iterator it = std::find(m_items.begin(), m_items.end(), item.getID());
+    m_items.erase(it);
+}
+
 /*
 This function essentially takes the save data from the vector and
 loads it into the object

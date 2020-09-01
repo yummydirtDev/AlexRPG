@@ -55,6 +55,7 @@ public:
     void setLevel(int level);
     void setCash(int cash);
     void addItem(Item item);
+    void removeItem(Item item);
     // Save/Load mechanism
     int loadFromVector(std::vector<std::string> saveData);
     std::vector<std::string> saveToVector();
