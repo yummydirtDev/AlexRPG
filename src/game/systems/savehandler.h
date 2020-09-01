@@ -6,7 +6,7 @@
 #include <string>
 #include <algorithm>
 #include "items.h"
-#include "color.h"
+#include "../lib/color.h"
 
 class GameData {
 private:

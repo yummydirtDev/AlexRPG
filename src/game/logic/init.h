@@ -7,9 +7,9 @@
 #include <string>
 
 #include <limits>
-#include "../alexsaveload/saveload.h"
-#include "savehandler.h"
-#include "color.h"
+#include "../../alexsaveload/saveload.h"
+#include "../systems/savehandler.h"
+#include "../lib/color.h"
 
 GameData initGame();
 

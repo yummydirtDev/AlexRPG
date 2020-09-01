@@ -1,9 +1,9 @@
 #ifndef __GAME_H__
 #define __GAME_H__
 
-#include "savehandler.h"
+#include "../systems/savehandler.h"
 #include "init.h"
-#include "items.h"
+#include "../systems/items.h"
 
 GameData gameLoop(GameData data);
 
