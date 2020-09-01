@@ -10,11 +10,11 @@
   TARGET = alexrpg
 
   # the source code files
-  STUFF = ./game/*.cpp ./alexsaveload/*.cpp
+  STUFF = ./src/game/logic/*.cpp ./src/game/systems/*.cpp ./src/alexsaveload/*.cpp
 
   all: $(TARGET)
 
-  $(TARGET): ./game/*.cpp ./alexsaveload/*.cpp
+  $(TARGET): ./src/game/logic/*.cpp ./src/game/systems/*.cpp ./src/alexsaveload/*.cpp
 	$(CC) $(CFLAGS) $(STUFF) -o $(TARGET)
 
   clean:
