@@ -56,6 +56,7 @@ public:
     void setCash(int cash);
     void addItem(Item item);
     void removeItem(Item item);
+    Item getWeapon(Items items);
     // Save/Load mechanism
     int loadFromVector(std::vector<std::string> saveData);
     std::vector<std::string> saveToVector();

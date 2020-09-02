@@ -116,6 +116,14 @@ void GameData::removeItem(Item item) {
     m_items.erase(it);
 }
 
+Item GameData::getWeapon(Items items) {
+    int topWeapon{ -1 };
+    
+    for (int x{0}; x < m_items.size(); x++) {
+        Item currentItem{ items.searchID(m_items[x]) };
+    }
+}
+
 /*
 This function essentially takes the save data from the vector and
 loads it into the object
