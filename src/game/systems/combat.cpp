@@ -34,42 +34,45 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
 
     int enemyHealth = enemy.getHealth();
     char userChoice;
+    bool inputRecognized{ false };
 
-    std::cout << "Battle between " << blue << data.getUserName() << " " << red <<
-    "(Level " << data.getLevel() << ") " << reset << "and " << blue <<
-    enemy.getName() << reset << ".\n";
+    std::cout << "Battle between " << blue << data.getUserName() << " " << red
+        << "(Level " << data.getLevel() << ") " << reset << "and " << blue
+        << enemy.getName() << reset << ".\n";
 
     while (enemyHealth > 0 && data.getCurrentHealth() > 0) {
-        std::cout << "Would you like to " <<
-        red << "(J) " << magenta << "Joke" << reset << ", " <<
-        red << "(C) " << magenta << "Prepare for comeback" << reset << ", " <<
-        red << "(I) " << magenta << "Inventory" << reset << ", " <<
-        red << "(S) " << magenta << "Check Status " << reset;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin >> userChoice;
-	    switch (userChoice) {
-	    case 'J':
-	    case 'j':
-            // TODO: Add joke telling ability
-            enemyHealth -= (data.getWit() + data.getWeapon(items).getDamage());
-            std::cout << "You hit them with a zinger: " << blue << '"' <<
-            userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
-            std::cout << "Their " << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] << '\n';
-            break;
-        case 'C':
-        case 'c':
-            // Same TODO as before
-        case 'I':
-        case 'i':
-            // TODO: Add item using ability
-            data.checkInventory(items);
-            break;
-        case 'S':
-        case 's':
-            data.checkStatus();
-            break;
-	    }
-	    // TODO: Do enemy turn and make them tell a joke
+        while (!inputRecognized) {
+            std::cout << "Would you like to "
+            << red << "(J) " << magenta << "Joke" << reset << ", "
+            << red << "(C) " << magenta << "Prepare for comeback" << reset << ", "
+            << red << "(I) " << magenta << "Inventory" << reset << ", "
+            << red << "(S) " << magenta << "Check Status " << reset;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin >> userChoice;
+            switch (userChoice) {
+            case 'J':
+            case 'j':
+                // TODO: Add joke telling ability
+                enemyHealth -= (data.getWit() + data.getWeapon(items).getDamage());
+                std::cout << "You hit them with a zinger: " << blue << '"'
+                << userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
+                std::cout << "Their " << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] << '\n';
+                break;
+            case 'C':
+            case 'c':
+                // Same TODO as before
+            case 'I':
+            case 'i':
+                // TODO: Add item using ability
+                data.checkInventory(items);
+                break;
+            case 'S':
+            case 's':
+                data.checkStatus();
+                break;
+            }
+            // TODO: Do enemy turn and make them tell a joke
+        }
     }
 
     std::cout << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))];

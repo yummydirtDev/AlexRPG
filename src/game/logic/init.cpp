@@ -1,6 +1,6 @@
 #include "init.h"
 
-static int newGame(GameData *data);
+static int newGame(GameData* data);
 
 GameData initGame() {
     // This function (as the name suggests) initializes the game
@@ -12,9 +12,9 @@ GameData initGame() {
 
     std::cout << "Welcome to AlexRPG" << '\n';
     while (!inputRecognized) {
-        std::cout << "Would you like to " << red << "(l)" << magenta <<
-        "oad a save" << reset << " or" << magenta << " start a " << red <<
-        "(n)" << magenta << "ew adventure" << reset << "? ";
+        std::cout << "Would you like to " << red << "(l)" << magenta
+        << "oad a save" << reset << " or" << magenta << " start a " << red
+        << "(n)" << magenta << "ew adventure" << reset << "? ";
         std::cin >> newOrOld;
         std::cout << '\n';
         switch (newOrOld) {
@@ -27,8 +27,7 @@ GameData initGame() {
                 if (newGame(&data) == 0) {
                     break;
                 }
-            }
-            else {
+            } else {
                 std::cout << "Game loaded successfully!\n";
                 break;
             }
@@ -47,7 +46,7 @@ GameData initGame() {
     return data;
 }
 
-static int newGame(GameData *data) {
+static int newGame(GameData* data) {
     std::string confirm;
     std::string newName;
 
@@ -64,8 +63,7 @@ static int newGame(GameData *data) {
         saveGame(data->saveToVector());
         std::cout << "Successfully overwrote the save file!\n";
         return 0;
-    }
-    else {
+    } else {
         std::cout << "Confirm not typed" << '\n';
         return 1;
     }

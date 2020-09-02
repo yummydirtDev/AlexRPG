@@ -21,8 +21,8 @@ GameData gameLoop(GameData data) {
     switch (data.getTurns()) {
     // If it is turn 0 give the user a tutorial
     case 0:
-        std::cout << "You appear to be new to AlexRPG, would you like to hear a tutorial? " <<
-        red << "(Y or N) " << reset;
+        std::cout << "You appear to be new to AlexRPG, would you like to hear a tutorial? "
+        << red << "(Y or N) " << reset;
         while (!inputRecognized) {
             std::cin >> yOrN;
             switch (yOrN) {
@@ -41,10 +41,10 @@ GameData gameLoop(GameData data) {
             }
         }
         std::cout << '\n';
-        std::cout << "Alright then! Let's begin. You find yourself in a ditch near downtown Phoenix, " <<
-        "the city skyline in the horizon.\n";
-        std::cout << "You spot a crappy microphone near you on the ground, " <<
-        "you pick it up just in case it might help.\n";
+        std::cout << "Alright then! Let's begin. You find yourself in a ditch near downtown Phoenix, "
+        << "the city skyline in the horizon.\n";
+        std::cout << "You spot a crappy microphone near you on the ground, "
+        << "you pick it up just in case it might help.\n";
         // The starting mic for the game
         data.addItem(items.toyMic);
         endChoice(data, items);
@@ -57,11 +57,11 @@ GameData gameLoop(GameData data) {
 static char turnChoice() {
     char input;
     bool inputRecognized{ false };
-    std::cout << "Would you like to " << red << "(N)" << magenta << 
-    " Next Turn" << reset << ", " << red << "(I)" << magenta << 
-    " Inventory" << reset << "," << red << " (S)" << magenta << 
-    " Status" << reset << ", or " << red << "(Q)" << magenta <<
-    " Quit " << reset;
+    std::cout << "Would you like to " << red << "(N)" << magenta 
+    << " Next Turn" << reset << ", " << red << "(I)" << magenta
+    << " Inventory" << reset << "," << red << " (S)" << magenta
+    << " Status" << reset << ", or " << red << "(Q)" << magenta
+    << " Quit " << reset;
     std::cin >> input;
     while (!inputRecognized) {
         switch (input) {
@@ -126,13 +126,13 @@ static inline GameData endChoice(GameData data, Items items) {
 }
 
 static inline void tutorial(GameData *data) {
-    std::cout << "Alright! AlexRPG is an RPG where you play as Alex, on a journey to " <<
-        "destroy Googular, a biting allegory for corporate America.\n";
-    std::cout << "Rather than fight with weapons, you tell jokes. " <<
-        "The measure of joke-telling ability is called wit. To start out you have " <<
-        data->getWit() << " wit.\n";
-    std::cout << "While there is no real violence from the attacking side, these jokes cause real damage. " <<
-        "The defending side will have real and gruesome injuries from these jokes.\n";
-    std::cout << "The defending side can attempt a comeback to reverse the damage, " <<
-    "but if it fails they lose the turn and take the damage.\n";
+    std::cout << "Alright! AlexRPG is an RPG where you play as Alex, on a journey to "
+    << "destroy Googular, a biting allegory for corporate America.\n";
+    std::cout << "Rather than fight with weapons, you tell jokes. "
+    << "The measure of joke-telling ability is called wit. To start out you have "
+    << data->getWit() << " wit.\n";
+    std::cout << "While there is no real violence from the attacking side, these jokes cause real damage. "
+    << "The defending side will have real and gruesome injuries from these jokes.\n";
+    std::cout << "The defending side can attempt a comeback to reverse the damage, "
+    << "but if it fails they lose the turn and take the damage.\n";
 }

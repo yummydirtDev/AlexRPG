@@ -34,7 +34,7 @@ public:
     // A lot of constructors and get/set
     GameData(std::string userName, int turns, std::vector<int> items, int maxHealth, int currentHealth, int wit, int stoneface, int xp, int level);
     GameData();
-    int gameStatus{0};
+    int gameStatus{ 0 };
     std::vector<int> m_items;
     std::string getUserName();
     int getTurns();

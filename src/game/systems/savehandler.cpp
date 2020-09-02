@@ -106,8 +106,8 @@ void GameData::setCash(int cash) {
 void GameData::addItem(Item item) {
     m_items.resize(m_items.size() + 1, item.getID());
     switch (item.getType()) {
-        case 1:
-            std::cout << "You have acquired " << green << item.getName() << reset << "!\n";
+    case 1:
+        std::cout << "You have acquired " << green << item.getName() << reset << "!\n";
     }
 }
 
@@ -119,7 +119,7 @@ void GameData::removeItem(Item item) {
 Item GameData::getWeapon(Items items) {
     int topWeapon{ -1 };
 
-    for (long unsigned int x{0}; x < m_items.size(); x++) {
+    for (long unsigned int x{ 0 }; x < m_items.size(); x++) {
         Item currentItem{ items.searchID(m_items[x]) };
         if (currentItem.getType() == 1) {
             if (currentItem.getID() > topWeapon) {
@@ -187,8 +187,8 @@ std::vector<std::string> GameData::saveToVector() {
 
 void GameData::checkStatus() {
     std::cout << blue << "Name: " << reset << m_userName << '\n';
-    std::cout << blue << "Health: " << reset << m_currentHealth <<
-    " / " << m_maxHealth << '\n';
+    std::cout << blue << "Health: " << reset << m_currentHealth
+    << " / " << m_maxHealth << '\n';
     std::cout << blue << "Wit: " << reset << m_wit << '\n';
     std::cout << blue << "Stoneface: " << reset << m_stoneface << '\n';
     std::cout << blue << "Cash: " << reset << m_cash << " DirtBux\n";
@@ -198,11 +198,11 @@ void GameData::checkInventory(Items items) {
     std::vector<std::string> weaponList{};
     std::vector<std::string> healList{};
     std::cout << blue << "Cash: " << reset << m_cash << '\n';
-    for (long unsigned int i{0}; i < m_items.size(); i++) {
+    for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
         Item currentItem = items.searchID(m_items[i]);
         switch (currentItem.getType()) {
         case 1:
-            if ( !(std::find(weaponList.begin(), weaponList.end(), currentItem.getName()) != weaponList.end()) ) {
+            if (!(std::find(weaponList.begin(), weaponList.end(), currentItem.getName()) != weaponList.end())) {
                 weaponList.resize(weaponList.size() + 1, currentItem.getName());
             }
             break;
@@ -212,11 +212,11 @@ void GameData::checkInventory(Items items) {
         }
     }
     std::cout << green << "Weapons:\n" << reset;
-    for (long unsigned int i{0}; i < weaponList.size(); i++) {
+    for (long unsigned int i{ 0 }; i < weaponList.size(); i++) {
         std::cout << blue << weaponList[i] << '\n' << reset;
     }
     std::cout << green << "Healing Items:\n" << reset;
-    for (long unsigned int i{0}; i < healList.size(); i++) {
-    	std::cout << blue << healList[i] << '\n' << reset;
+    for (long unsigned int i{ 0 }; i < healList.size(); i++) {
+        std::cout << blue << healList[i] << '\n' << reset;
     }
 }
