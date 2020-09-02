@@ -45,14 +45,16 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         red << "(C) " << magenta << "Prepare for comeback" << reset << ", " <<
         red << "(I) " << magenta << "Inventory" << reset << ", " <<
         red << "(S) " << magenta << "Check Status " << reset;
-        std::cin.ignore();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin >> userChoice;
 	    switch (userChoice) {
 	    case 'J':
 	    case 'j':
             // TODO: Add joke telling ability
-            enemyHealth -= (data.getWit() + items.toyMic.getDamage());
-            std::cout << userLines[Random::get(0, int(userLines.size()))] << '\n';
+            enemyHealth -= (data.getWit() + data.getWeapon(items).getDamage());
+            std::cout << "You hit them with a zinger: " << blue << '"' <<
+            userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
+            std::cout << "Their " << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] << '\n';
             break;
         case 'C':
         case 'c':
@@ -70,6 +72,6 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
 	    // TODO: Do enemy turn and make them tell a joke
     }
 
-    std::cout << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size()))];
+    std::cout << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))];
     return data;
 }

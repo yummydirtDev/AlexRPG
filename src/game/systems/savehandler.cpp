@@ -118,10 +118,16 @@ void GameData::removeItem(Item item) {
 
 Item GameData::getWeapon(Items items) {
     int topWeapon{ -1 };
-    
-    for (int x{0}; x < m_items.size(); x++) {
+
+    for (long unsigned int x{0}; x < m_items.size(); x++) {
         Item currentItem{ items.searchID(m_items[x]) };
+        if (currentItem.getType() == 1) {
+            if (currentItem.getID() > topWeapon) {
+                topWeapon = currentItem.getID();
+            }
+        }
     }
+    return items.searchID(topWeapon);
 }
 
 /*
