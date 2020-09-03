@@ -220,3 +220,34 @@ void GameData::checkInventory(Items items) {
         std::cout << blue << healList[i] << '\n' << reset;
     }
 }
+
+void GameData::checkInventory(Items items, bool usableInventory) {
+    if (usableInventory) {
+        std::vector<std::string> weaponList{};
+        std::vector<std::string> healList{};
+        std::vector<Item> usableItems{};
+        std::cout << blue << "Cash: " << reset << m_cash << '\n';
+        for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
+            Item currentItem = items.searchID(m_items[i]);
+            switch (currentItem.getType()) {
+            case 1:
+                if (!(std::find(weaponList.begin(), weaponList.end(), currentItem.getName()) != weaponList.end())) {
+                    weaponList.resize(weaponList.size() + 1, currentItem.getName());
+                }
+                break;
+            case 2:
+                healList.resize(healList.size() + 1, currentItem.getName());
+                usableItems.resize(usableItems.size() + 1, currentItem);
+                break;
+            }
+        }
+        std::cout << green << "Weapons:\n" << reset;
+        for (long unsigned int i{ 0 }; i < weaponList.size(); i++) {
+            std::cout << blue << weaponList[i] << '\n' << reset;
+        }
+        std::cout << green << "Healing Items:\n" << reset;
+        for (long unsigned int i{ 0 }; i < healList.size(); i++) {
+            std::cout << i << " " << blue << healList[i] << '\n' << reset;
+        }
+    }
+}
