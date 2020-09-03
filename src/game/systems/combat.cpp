@@ -37,8 +37,8 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
     bool inputRecognized{ false };
 
     std::cout << "Battle between " << blue << data.getUserName() << " " << red
-        << "(Level " << data.getLevel() << ") " << reset << "and " << blue
-        << enemy.getName() << reset << ".\n";
+    << "(Level " << data.getLevel() << ") " << reset << "and " << blue
+    << enemy.getName() << reset << ".\n";
 
     while (enemyHealth > 0 && data.getCurrentHealth() > 0) {
         while (!inputRecognized) {
@@ -64,7 +64,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'I':
             case 'i':
                 // TODO: Add item using ability
-                data.checkInventory(items);
+                data.checkInventory(items, true);
                 break;
             case 'S':
             case 's':
