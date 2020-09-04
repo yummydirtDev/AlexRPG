@@ -63,7 +63,7 @@ public:
     // Check the players status
     void checkStatus();
     void checkInventory(Items items);
-    void checkInventory(Items items, bool usableInventory);
+    char checkInventory(Items items, bool usableInventory);
 };
 
 #endif // __SAVEHANDLER_H__

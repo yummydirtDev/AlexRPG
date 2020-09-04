@@ -57,6 +57,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 std::cout << "You hit them with a zinger: " << blue << '"'
                 << userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
                 std::cout << "Their " << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] << '\n';
+                inputRecognized = true;
                 break;
             case 'C':
             case 'c':
@@ -64,7 +65,9 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'I':
             case 'i':
                 // TODO: Add item using ability
-                data.checkInventory(items, true);
+                if (data.checkInventory(items, true) == 1) {
+                    inputRecognized = true;
+                }
                 break;
             case 'S':
             case 's':
