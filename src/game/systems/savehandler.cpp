@@ -253,19 +253,25 @@ void GameData::checkInventory(Items items, bool usableInventory) {
             std::cout << i << " " << blue << healList[i] << '\n' << reset;
         }
         while (!inputRecognized) {
-            std::cout << "What item would you like to use? " << red << "(Enter Number) ";
+            std::cout << "What item would you like to use? " << red << "(Enter Number) " << reset;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cin >> userChoice;
-            Item currentItem{ usableItems[userChoice] };
-            // Please work holy crap
-            removeItem(currentItem);
-            m_currentHealth += currentItem.getHealing();
-            // Make sure the user doesn't go over max health
-            if (m_currentHealth > m_maxHealth) {
-                m_currentHealth = m_maxHealth;
+            if (userChoice < usableItems.size()) {
+                Item currentItem{ usableItems[userChoice] };
+                // Please work holy crap
+                removeItem(currentItem);
+                m_currentHealth += currentItem.getHealing();
+                // Make sure the user doesn't go over max health
+                if (m_currentHealth > m_maxHealth) {
+                    m_currentHealth = m_maxHealth;
+                }
+                std::cout << "You used " << blue << currentItem.getName() << reset << '\n';
+                std::cout << "Health is now: " << blue << m_currentHealth
+                << "/" << m_maxHealth << reset << '\n';
+                inputRecognized = true;
+            } else {
+                std::cout << "Input not recognized, try again\n";
             }
-            std::cout << "You used " << blue << currentItem.getName() << reset << '\n';
-            // REMEMBER TO ADD INPUT SANITIZATION!!!
         }
     } else {
         checkInventory(items);
