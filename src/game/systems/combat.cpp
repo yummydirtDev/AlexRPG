@@ -53,7 +53,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'J':
             case 'j':
                 // TODO: Add joke telling ability
-                enemyHealth -= (data.getWit() + data.getWeapon(items).getDamage());
+                enemyHealth -= ((data.getWit() / enemy.getStoneface()) * data.getWeapon(items).getDamage());
                 std::cout << "You hit them with a zinger: " << blue << '"'
                 << userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
                 std::cout << "Their " << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] << '\n';
