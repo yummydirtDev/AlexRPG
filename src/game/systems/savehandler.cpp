@@ -227,7 +227,7 @@ char GameData::checkInventory(Items items, bool usableInventory) {
         std::vector<std::string> healList{};
         std::vector<Item> usableItems{};
         // Input choice
-        unsigned char userChoice;
+        std::string userChoice;
         bool inputRecognized{ false };
         std::cout << blue << "Cash: " << reset << m_cash << '\n';
         for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
@@ -256,8 +256,8 @@ char GameData::checkInventory(Items items, bool usableInventory) {
             std::cout << "What item would you like to use? " << red << "(Enter Number or q to quit) " << reset;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cin >> userChoice;
-            if (userChoice < usableItems.size()) {
-                Item currentItem{ usableItems[userChoice] };
+            if (std::stoul(userChoice) < usableItems.size()) {
+                Item currentItem{ usableItems[std::stoi(userChoice)] };
                 // Please work holy crap
                 removeItem(currentItem);
                 m_currentHealth += currentItem.getHealing();
@@ -270,7 +270,7 @@ char GameData::checkInventory(Items items, bool usableInventory) {
                 << "/" << m_maxHealth << reset << '\n';
                 inputRecognized = true;
                 return 1;
-            } else if (userChoice == 'q' || userChoice == 'Q') {
+            } else if (userChoice == "q" || userChoice == "Q") {
                 return 0;
             } else {
                 std::cout << "Input not recognized, try again\n";
