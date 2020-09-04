@@ -226,6 +226,9 @@ void GameData::checkInventory(Items items, bool usableInventory) {
         std::vector<std::string> weaponList{};
         std::vector<std::string> healList{};
         std::vector<Item> usableItems{};
+        // Input choice
+        long unsigned int userChoice;
+        bool inputRecognized{ false };
         std::cout << blue << "Cash: " << reset << m_cash << '\n';
         for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
             Item currentItem = items.searchID(m_items[i]);
@@ -249,5 +252,22 @@ void GameData::checkInventory(Items items, bool usableInventory) {
         for (long unsigned int i{ 0 }; i < healList.size(); i++) {
             std::cout << i << " " << blue << healList[i] << '\n' << reset;
         }
+        while (!inputRecognized) {
+            std::cout << "What item would you like to use? " << red << "(Enter Number) ";
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin >> userChoice;
+            Item currentItem{ usableItems[userChoice] };
+            // Please work holy crap
+            removeItem(currentItem);
+            m_currentHealth += currentItem.getHealing();
+            // Make sure the user doesn't go over max health
+            if (m_currentHealth > m_maxHealth) {
+                m_currentHealth = m_maxHealth;
+            }
+            std::cout << "You used " << blue << currentItem.getName() << reset << '\n';
+            // REMEMBER TO ADD INPUT SANITIZATION!!!
+        }
+    } else {
+        checkInventory(items);
     }
 }
