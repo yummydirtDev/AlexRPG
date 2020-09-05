@@ -35,6 +35,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
     int enemyHealth = enemy.getHealth();
     char userChoice;
     bool inputRecognized{ false };
+    bool comebackSuccess{ false };
 
     std::cout << "Battle between " << blue << data.getUserName() << " " << red
     << "(Level " << data.getLevel() << ") " << reset << "and " << blue
@@ -52,7 +53,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             switch (userChoice) {
             case 'J':
             case 'j':
-                // TODO: Add joke telling ability
+                // Joke telling ability
                 enemyHealth -= ((data.getWit() / enemy.getStoneface()) * data.getWeapon(items).getDamage());
                 std::cout << "You hit them with a zinger: " << blue << '"'
                 << userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
@@ -62,6 +63,8 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'C':
             case 'c':
                 // Same TODO as before
+
+                break;
             case 'I':
             case 'i':
                 // TODO: Add item using ability
