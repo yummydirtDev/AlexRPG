@@ -63,7 +63,9 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'C':
             case 'c':
                 // Same TODO as before
-
+                if ((Random::get(0, 10) * (data.getStoneface() / enemy.getWit()) >= 5)) {
+                    comebackSuccess = true;
+                }
                 break;
             case 'I':
             case 'i':
