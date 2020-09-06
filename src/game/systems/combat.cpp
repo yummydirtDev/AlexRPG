@@ -65,7 +65,10 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 // Same TODO as before
                 if ((Random::get(0, 10) * (data.getStoneface() / enemy.getWit()) >= 5)) {
                     comebackSuccess = true;
+                } else {
+                    std::cout << "Comeback attempt unsuccessful\n";
                 }
+                inputRecognized = true;
                 break;
             case 'I':
             case 'i':
