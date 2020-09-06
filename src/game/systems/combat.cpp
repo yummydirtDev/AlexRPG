@@ -93,9 +93,11 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             comebackSuccess = false;
         } else {
             data.setCurrentHealth(data.getCurrentHealth() - (enemy.getWit() / data.getStoneface()) * enemy.getWeaponStrength());
+            std::cout << "They respond: " << blue << '"'
+            << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
+            << '"' << '\n' << reset;
         }
+        inputRecognized = false;
     }
-
-    std::cout << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))];
     return data;
 }
