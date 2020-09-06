@@ -1,12 +1,13 @@
 #include "combat.h"
 
-Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines) {
+Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines, int weaponStrength) {
     m_name = name;
     m_health = health;
     m_wit = wit;
     m_stoneface = stoneface;
     m_xpGiven = xpGiven;
     enemyLines = lines;
+    m_weaponStrength = weaponStrength;
 }
 
 std::string Enemy::getName() {
@@ -27,6 +28,10 @@ int Enemy::getStoneface() {
 
 int Enemy::getXpGiven() {
     return m_xpGiven;
+}
+
+int Enemy::getWeaponStrength() {
+    return m_weaponStrength;
 }
 
 GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
@@ -83,6 +88,9 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 break;
             }
             // TODO: Do enemy turn and make them tell a joke
+            if (comebackSuccess == true) {
+                comebackSuccess = false;
+            }
         }
     }
 

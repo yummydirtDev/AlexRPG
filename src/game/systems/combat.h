@@ -15,15 +15,17 @@ private:
     int m_wit;
     int m_stoneface;
     int m_xpGiven;
+    int m_weaponStrength;
 public:
     std::vector<std::string> enemyLines;
     std::vector<std::string> userLines;
-    Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines);
+    Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines, int weaponStrength);
     std::string getName();
     int getHealth();
     int getWit();
     int getStoneface();
     int getXpGiven();
+    int getWeaponStrength();
 };
 
 class Enemies {
@@ -64,7 +66,7 @@ public:
         "The bar had to be shut down after CTE concerns",
         "Yo mama got brain trauma from a bar"
     };
-    Enemy sam{ "Sam", 20, 2, 2, 50, samELines };
+    Enemy sam{ "Sam", 20, 2, 2, 50, samELines, 5 };
 };
 
 #endif // __COMBAT_H__
