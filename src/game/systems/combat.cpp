@@ -93,7 +93,6 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             comebackSuccess = false;
         } else {
             data.setCurrentHealth(data.getCurrentHealth() - std::round(((static_cast<double>(enemy.getWit()) / static_cast<double>(data.getStoneface())) * enemy.getWeaponStrength())));
-            std::cout << ((static_cast<double>(enemy.getWit()) / static_cast<double>(data.getStoneface())) * enemy.getWeaponStrength());
             std::cout << "They respond: " << blue << '"'
             << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
             << '"' << '\n' << reset;
