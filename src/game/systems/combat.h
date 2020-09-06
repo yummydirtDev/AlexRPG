@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <cmath>
 #include "savehandler.h"
 #include "../lib/random.hpp"
 #include "../lib/color.h"
