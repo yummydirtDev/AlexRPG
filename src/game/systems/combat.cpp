@@ -87,10 +87,12 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 data.checkStatus();
                 break;
             }
-            // TODO: Do enemy turn and make them tell a joke
-            if (comebackSuccess == true) {
-                comebackSuccess = false;
-            }
+        }
+        // TODO: Do enemy turn and make them tell a joke
+        if (comebackSuccess == true) {
+            comebackSuccess = false;
+        } else {
+            data.setCurrentHealth(data.getCurrentHealth() - (enemy.getWit() / data.getStoneface()) * enemy.getWeaponStrength());
         }
     }
 
