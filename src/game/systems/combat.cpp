@@ -59,7 +59,8 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'J':
             case 'j':
                 // Joke telling ability
-                enemyHealth -= (std::round((static_cast<double>(data.getWit()) / static_cast<double>(enemy.getStoneface())) * data.getWeapon(items).getDamage()));
+                enemyHealth -= (std::round((static_cast<double>(data.getWit()) / static_cast<double>(enemy.getStoneface())) 
+                    * data.getWeapon(items).getDamage()));
                 std::cout << "You hit them with a zinger: " << blue << '"'
                 << userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
                 std::cout << "Their " << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] << '\n';
@@ -68,7 +69,8 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'C':
             case 'c':
                 // Same TODO as before
-                if ((Random::get(0, 10) * std::round((static_cast<double>(data.getStoneface()) / static_cast<double>(enemy.getWit()))) >= 5)) {
+                if ((Random::get(0, 10) * std::round((static_cast<double>(data.getStoneface()) 
+                / static_cast<double>(enemy.getWit()))) >= 5)) {
                     comebackSuccess = true;
                 } else {
                     std::cout << "Comeback attempt unsuccessful\n";
@@ -92,7 +94,8 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         if (comebackSuccess == true) {
             comebackSuccess = false;
         } else {
-            data.setCurrentHealth(data.getCurrentHealth() - std::round(((static_cast<double>(enemy.getWit()) / static_cast<double>(data.getStoneface())) * enemy.getWeaponStrength())));
+            data.setCurrentHealth(data.getCurrentHealth() - std::round(((static_cast<double>(enemy.getWit()) 
+                / static_cast<double>(data.getStoneface())) * enemy.getWeaponStrength())));
             std::cout << "They respond: " << blue << '"'
             << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
             << '"' << '\n' << reset;

@@ -49,3 +49,5 @@ std::string makeCodeWork() {
     return code;\
 }
 ```
+
+Don't worry too much about line length but if possible make lines shorter than 144 characters
