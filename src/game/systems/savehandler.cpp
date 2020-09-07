@@ -257,7 +257,9 @@ char GameData::checkInventory(Items items, bool usableInventory) {
             std::cout << "What item would you like to use? " << red << "(Enter Number or q to quit) " << reset;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cin >> userChoice;
-            if (std::stoul(userChoice) < usableItems.size()) {
+            if (userChoice == "q" || userChoice == "Q") {
+                return 0;
+            } else if (std::stoul(userChoice) < usableItems.size()) {
                 Item currentItem{ usableItems[std::stoi(userChoice)] };
                 // Please work holy crap
                 removeItem(currentItem);
@@ -271,8 +273,6 @@ char GameData::checkInventory(Items items, bool usableInventory) {
                 << "/" << m_maxHealth << reset << '\n';
                 inputRecognized = true;
                 return 1;
-            } else if (userChoice == "q" || userChoice == "Q") {
-                return 0;
             } else {
                 std::cout << "Input not recognized, try again\n";
             }
