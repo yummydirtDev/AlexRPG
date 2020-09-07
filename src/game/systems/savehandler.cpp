@@ -257,24 +257,29 @@ char GameData::checkInventory(Items items, bool usableInventory) {
             std::cout << "What item would you like to use? " << red << "(Enter Number or q to quit) " << reset;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cin >> userChoice;
-            if (userChoice == "q" || userChoice == "Q") {
-                return 0;
-            } else if (std::stoul(userChoice) < usableItems.size()) {
-                Item currentItem{ usableItems[std::stoi(userChoice)] };
-                // Please work holy crap
-                removeItem(currentItem);
-                m_currentHealth += currentItem.getHealing();
-                // Make sure the user doesn't go over max health
-                if (m_currentHealth > m_maxHealth) {
-                    m_currentHealth = m_maxHealth;
+            try {
+                if (userChoice == "q" || userChoice == "Q") {
+                    return 0;
+                } else if (std::stoul(userChoice) < usableItems.size()) {
+                    Item currentItem{ usableItems[std::stoi(userChoice)] };
+                    // Please work holy crap
+                    removeItem(currentItem);
+                    m_currentHealth += currentItem.getHealing();
+                    // Make sure the user doesn't go over max health
+                    if (m_currentHealth > m_maxHealth) {
+                        m_currentHealth = m_maxHealth;
+                    }
+                    std::cout << "You used " << blue << currentItem.getName() << reset << '\n';
+                    std::cout << "Health is now: " << blue << m_currentHealth
+                        << "/" << m_maxHealth << reset << '\n';
+                    inputRecognized = true;
+                    return 1;
+                } else {
+                    std::cout << "Input not recognized, try again\n";
                 }
-                std::cout << "You used " << blue << currentItem.getName() << reset << '\n';
-                std::cout << "Health is now: " << blue << m_currentHealth
-                << "/" << m_maxHealth << reset << '\n';
-                inputRecognized = true;
-                return 1;
-            } else {
-                std::cout << "Input not recognized, try again\n";
+            }
+            catch (const std::invalid_argument&) {
+                std::cout << "Not a number!\n";
             }
         }
     } else {
