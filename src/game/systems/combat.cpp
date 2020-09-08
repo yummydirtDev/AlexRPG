@@ -1,6 +1,7 @@
 #include "combat.h"
 
-Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines, int weaponStrength) {
+Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven,
+            std::vector<std::string> lines, int weaponStrength) {
     m_name = name;
     m_health = health;
     m_wit = wit;
@@ -60,22 +61,30 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'J':
             case 'j':
                 // Joke telling ability
-                damageDelivered = (std::round((static_cast<double>(data.getWit()) / static_cast<double>(enemy.getStoneface())) 
+                damageDelivered = (std::round((static_cast<double>(data.getWit()) 
+                    / static_cast<double>(enemy.getStoneface())) 
                     * data.getWeapon(items).getDamage()));
                 enemyHealth -= damageDelivered;
                 std::cout << "You hit them with a zinger: " << blue << '"'
-                << userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
+                << userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] 
+                << '"' << '\n' << reset;
                 std::cout << "It does " << red << damageDelivered << reset 
                 << " damage. They have (" << red << enemyHealth << "/"
                 << enemy.getHealth() << reset << ") health left.\n";
-                std::cout << "Their " << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] << '\n';
+                std::cout << blue << '"' 
+                << hurtLines[Random::get(0, static_cast<int>(hurtLines.size() - 1))]
+                << '"\n' << reset;
+                std::cout << "Their " 
+                << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] 
+                << '\n';
                 inputRecognized = true;
                 break;
             case 'C':
             case 'c':
                 // Same TODO as before
-                if ((Random::get(0, 10) * std::round((static_cast<double>(data.getStoneface()) 
-                / static_cast<double>(enemy.getWit()))) >= 5)) {
+                if ((Random::get(0, 10)
+                    * std::round((static_cast<double>(data.getStoneface())
+                    / static_cast<double>(enemy.getWit()))) >= 5)) {
                     comebackSuccess = true;
                 } else {
                     std::cout << "Comeback attempt unsuccessful\n";
@@ -98,12 +107,14 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         // TODO: Do enemy turn and make them tell a joke
         if (comebackSuccess == true) {
             comebackSuccess = false;
-            enemyHealth -= (std::round((static_cast<double>(data.getWit()) / static_cast<double>(enemy.getStoneface())) 
+            enemyHealth -= (std::round((static_cast<double>(data.getWit()) 
+                / static_cast<double>(enemy.getStoneface())) 
                 * data.getWeapon(items).getDamage()));
             
         } else {
             damageDelivered = std::round(((static_cast<double>(enemy.getWit()) 
-                / static_cast<double>(data.getStoneface())) * enemy.getWeaponStrength()));
+                / static_cast<double>(data.getStoneface())) 
+                * enemy.getWeaponStrength()));
             data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
             std::cout << "They respond: " << blue << '"'
             << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
