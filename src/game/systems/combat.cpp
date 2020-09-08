@@ -38,6 +38,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
     using Random = effolkronium::random_static;
 
     int enemyHealth = enemy.getHealth();
+    int damageDelivered;
     char userChoice;
     bool inputRecognized{ false };
     bool comebackSuccess{ false };
@@ -59,10 +60,14 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             case 'J':
             case 'j':
                 // Joke telling ability
-                enemyHealth -= (std::round((static_cast<double>(data.getWit()) / static_cast<double>(enemy.getStoneface())) 
+                damageDelivered = (std::round((static_cast<double>(data.getWit()) / static_cast<double>(enemy.getStoneface())) 
                     * data.getWeapon(items).getDamage()));
+                enemyHealth -= damageDelivered;
                 std::cout << "You hit them with a zinger: " << blue << '"'
                 << userLines[Random::get(0, static_cast<int>(userLines.size() - 1))] << '"' << '\n' << reset;
+                std::cout << "It does " << red << damageDelivered << reset 
+                << " damage. They have (" << red << enemyHealth << "/"
+                << enemy.getHealth() << reset << ") health left.\n";
                 std::cout << "Their " << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] << '\n';
                 inputRecognized = true;
                 break;
@@ -93,9 +98,13 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         // TODO: Do enemy turn and make them tell a joke
         if (comebackSuccess == true) {
             comebackSuccess = false;
+            enemyHealth -= (std::round((static_cast<double>(data.getWit()) / static_cast<double>(enemy.getStoneface())) 
+                * data.getWeapon(items).getDamage()));
+            
         } else {
-            data.setCurrentHealth(data.getCurrentHealth() - std::round(((static_cast<double>(enemy.getWit()) 
-                / static_cast<double>(data.getStoneface())) * enemy.getWeaponStrength())));
+            damageDelivered = std::round(((static_cast<double>(enemy.getWit()) 
+                / static_cast<double>(data.getStoneface())) * enemy.getWeaponStrength()));
+            data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
             std::cout << "They respond: " << blue << '"'
             << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
             << '"' << '\n' << reset;

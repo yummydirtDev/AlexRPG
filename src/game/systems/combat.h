@@ -37,7 +37,8 @@ public:
         "leg breaks in two",
         "neck says bye bye",
         "elbows go inverted",
-        "eyes are stuck crossed"
+        "eyes are stuck crossed",
+        "appendix is scratched"
     };
     std::vector<std::string> hurtLines {
         "Ow, my knees! My spindly, spindly knees!",
