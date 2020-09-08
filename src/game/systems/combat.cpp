@@ -116,8 +116,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             comebackSuccess = false;
             enemyHealth -= damageDelivered;
         } else {
-            data.setCurrentHealth(data.getCurrentHealth() 
-                - damageDelivered);
+            data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
             std::cout << "They respond: " << blue << '"'
             << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
             << '"' << '\n' << reset;
