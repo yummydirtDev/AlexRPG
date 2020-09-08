@@ -81,7 +81,11 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 break;
             case 'C':
             case 'c':
-                // Same TODO as before
+                /*
+                This calculates a random value weighted by user stoneface
+                and enemy wit. If successful it tells the AI to attack itself in its
+                own turn.
+                */
                 if ((Random::get(0, 10)
                     * std::round((static_cast<double>(data.getStoneface())
                     / static_cast<double>(enemy.getWit()))) >= 5)) {
@@ -104,17 +108,14 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 break;
             }
         }
+        damageDelivered = std::round(((static_cast<double>(enemy.getWit()) 
+            / static_cast<double>(data.getStoneface())) 
+            * enemy.getWeaponStrength()));
         // TODO: Do enemy turn and make them tell a joke
         if (comebackSuccess == true) {
             comebackSuccess = false;
-            enemyHealth -= (std::round((static_cast<double>(data.getWit()) 
-                / static_cast<double>(enemy.getStoneface())) 
-                * data.getWeapon(items).getDamage()));
-            
+            enemyHealth -= damageDelivered;
         } else {
-            damageDelivered = std::round(((static_cast<double>(enemy.getWit()) 
-                / static_cast<double>(data.getStoneface())) 
-                * enemy.getWeaponStrength()));
             data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
             std::cout << "They respond: " << blue << '"'
             << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
