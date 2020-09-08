@@ -73,7 +73,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 << enemy.getHealth() << reset << ") health left.\n";
                 std::cout << blue << '"' 
                 << hurtLines[Random::get(0, static_cast<int>(hurtLines.size() - 1))]
-                << '"\n' << reset;
+                << "\"\n" << reset;
                 std::cout << "Their " 
                 << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] 
                 << '\n';
