@@ -47,7 +47,8 @@ GameData gameLoop(GameData data) {
         << "you pick it up just in case it might help.\n";
         // The starting mic for the game
         data.addItem(items.toyMic);
-        endChoice(data, items);
+        data = endChoice(data, items);
+        break;
     case 1:
         enemies.fight(enemies.sam, data, items);
     }
@@ -116,7 +117,6 @@ static inline GameData endChoice(GameData data, Items items) {
         case 'y':
             inputRecognized = true;
             std::cout << "Come back soon!\n";
-            data.setTurns(data.getTurns() + 1);
             saveGame(data.saveToVector());
             data.gameStatus = 1;
             break;
