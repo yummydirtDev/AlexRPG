@@ -108,6 +108,9 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 break;
             }
         }
+        std::cout << "Press enter to continue";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin.ignore();
         damageDelivered = std::round(((static_cast<double>(enemy.getWit()) 
             / static_cast<double>(data.getStoneface())) 
             * enemy.getWeaponStrength()));
@@ -120,6 +123,15 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             std::cout << "They respond: " << blue << '"'
             << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
             << '"' << '\n' << reset;
+            std::cout << "It does " << red << damageDelivered << reset 
+            << " damage. You have (" << red << data.getCurrentHealth() << "/"
+            << data.getMaxHealth() << reset << ") health left.\n";
+            std::cout << blue << '"' 
+            << hurtLines[Random::get(0, static_cast<int>(hurtLines.size() - 1))]
+            << "\"\n" << reset;
+            std::cout << "Your " 
+            << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] 
+            << '\n';
         }
         inputRecognized = false;
     }
