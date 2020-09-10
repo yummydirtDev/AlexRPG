@@ -23,6 +23,7 @@
     }
 #endif
 #ifdef _WIN32
+// Code snippet taken from Microsoft to let cmd.exe use ANSI color
 #define DEFINE_CONSOLEV2_PROPERTIES
 #define ENABLE_VIRTUAL_TERMINAL_PROCESSING  0x0004
     bool EnableVTMode() {
