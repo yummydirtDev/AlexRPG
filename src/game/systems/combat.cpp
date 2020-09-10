@@ -108,9 +108,6 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
                 break;
             }
         }
-        std::cout << "Press enter to continue";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin.ignore();
         damageDelivered = std::round(((static_cast<double>(enemy.getWit()) 
             / static_cast<double>(data.getStoneface())) 
             * enemy.getWeaponStrength()));
