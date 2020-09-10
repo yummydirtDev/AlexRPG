@@ -22,6 +22,31 @@
         return buf;
     }
 #endif
+#ifdef _WIN32
+#define DEFINE_CONSOLEV2_PROPERTIES
+#define ENABLE_VIRTUAL_TERMINAL_PROCESSING  0x0004
+    bool EnableVTMode() {
+        // Set output mode to handle virtual terminal sequences
+        HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+        if (hOut == INVALID_HANDLE_VALUE)
+        {
+            return false;
+        }
+
+        DWORD dwMode = 0;
+        if (!GetConsoleMode(hOut, &dwMode))
+        {
+            return false;
+        }
+
+        dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+        if (!SetConsoleMode(hOut, dwMode))
+        {
+            return false;
+        }
+        return true;
+    }
+#endif
 
 Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven,
             std::vector<std::string> lines, int weaponStrength) {
@@ -132,7 +157,12 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             }
         }
         std::cout << "Press any key to continue...";
+        #ifdef __linux__
         getch();
+        #endif
+        #ifdef _WIN32
+        _getch();
+        #endif
         std::cout << '\n';
         damageDelivered = std::round(((static_cast<double>(enemy.getWit()) 
             / static_cast<double>(data.getStoneface())) 
