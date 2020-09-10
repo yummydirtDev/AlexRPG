@@ -4,14 +4,29 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#ifdef __linux__
 #include <unistd.h>
 #include <termios.h>
+#endif
+#ifdef _WIN32
+#include <conio.h>
+#include <windows.h>
+#include <wchar.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+#define ESC "\x1b"
+#define CSI "\x1b["
+bool EnableVTMode();
+#endif
 #include "savehandler.h"
 #include "../lib/random.hpp"
 #include "../lib/color.h"
 #include "items.h"
 
+#ifdef __linux__
 char getch(void);
+#endif
 
 class Enemy {
 private:

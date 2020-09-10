@@ -2,6 +2,9 @@
 
 int main() {
     // Intro and initialize
+    #ifdef _WIN32
+    EnableVTMode();
+    #endif
     GameData data{ initGame() };
     while (data.gameStatus == 0) {
         if (data.gameStatus == 1) {
