@@ -3,12 +3,12 @@
 // Set directory based on operating system
 #ifdef __linux__
     std::string getSavePath() {
-        return std::string(getenv("HOME"))+"/.AlexRPG";
+        return std::string(getenv("HOME"))+ "/." + SAVENAME;
     }
 #endif
 #ifdef _WIN32
     std::string getSavePath() {
-        return std::string(getenv("APPDATA")) + "\\.AlexRPG";
+        return std::string(getenv("APPDATA")) + "\\." + SAVENAME;
     }
 #endif
 
