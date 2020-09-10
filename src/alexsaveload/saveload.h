@@ -13,5 +13,6 @@
 
 void saveGame(std::vector<std::string> dataList);
 std::vector<std::string> loadGame();
+std::string getSavePath();
 
 #endif // __SAVELOAD_H__

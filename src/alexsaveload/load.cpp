@@ -3,7 +3,7 @@
 std::vector<std::string> loadGame() {
     std::vector<std::string> loadList{};
     std::string currentItem{ "" };
-    std::ifstream saveFile{ std::string(getenv("HOME"))+"/.AlexRPG" };
+    std::ifstream saveFile{ getSavePath() };
     int i{ 0 };
     while (getline(saveFile, currentItem)) {
         loadList.resize(loadList.size() + 1);
