@@ -4,10 +4,14 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include <unistd.h>
+#include <termios.h>
 #include "savehandler.h"
 #include "../lib/random.hpp"
 #include "../lib/color.h"
 #include "items.h"
+
+char getch(void);
 
 class Enemy {
 private:
