@@ -172,6 +172,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         if (comebackSuccess == true) {
             comebackSuccess = false;
             enemyHealth -= damageDelivered;
+            std::cout << green << "Comeback successful!\n" << reset;
         } else {
             data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
             std::cout << "They respond: " << blue << '"'
