@@ -170,10 +170,12 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             * enemy.getWeaponStrength()));
         // TODO: Do enemy turn and make them tell a joke
         if (comebackSuccess == true) {
+            // This is if the comeback worked
             comebackSuccess = false;
             enemyHealth -= damageDelivered;
             std::cout << green << "Comeback successful!\n" << reset;
         } else {
+            // This is if there was no comeback
             data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
             std::cout << "They respond: " << blue << '"'
             << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
