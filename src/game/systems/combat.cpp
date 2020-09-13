@@ -174,6 +174,9 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             comebackSuccess = false;
             enemyHealth -= damageDelivered;
             std::cout << green << "Comeback successful!\n" << reset;
+            std::cout << "It does " << red << damageDelivered << reset 
+            << " damage. They have (" << red << enemyHealth << "/"
+            << enemy.getHealth() << reset << ") health left.\n";
         } else {
             // This is if there was no comeback
             data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
