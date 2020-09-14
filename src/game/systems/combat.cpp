@@ -158,6 +158,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             }
         }
         std::cout << "Press any key to continue...";
+        // WHY DOESN'T LINUX HAVE A GETCH?????
         #ifdef __linux__
         getch();
         #endif
@@ -165,7 +166,8 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         _getch();
         #endif
         std::cout << '\n';
-        if (enemyHealth <= 0) {
+        // Don't let a dead enemy attack!
+        if (enemyHealth >= 0) {
             damageDelivered = std::round(((static_cast<double>(enemy.getWit())
                 / static_cast<double>(data.getStoneface()))
                 * enemy.getWeaponStrength()));
@@ -196,6 +198,11 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
             }
         }
         inputRecognized = false;
+    }
+    if (enemyHealth <= 0) {
+        std::cout << "You beat " << blue << enemy.getName() << reset << '\n';
+    } else {
+
     }
     return data;
 }
