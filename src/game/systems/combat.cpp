@@ -165,33 +165,35 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         _getch();
         #endif
         std::cout << '\n';
-        damageDelivered = std::round(((static_cast<double>(enemy.getWit()) 
-            / static_cast<double>(data.getStoneface())) 
-            * enemy.getWeaponStrength()));
-        // TODO: Do enemy turn and make them tell a joke
-        if (comebackSuccess == true) {
-            // This is if the comeback worked
-            comebackSuccess = false;
-            enemyHealth -= damageDelivered;
-            std::cout << green << "Comeback successful!\n" << reset;
-            std::cout << "It does " << red << damageDelivered << reset 
-            << " damage. They have (" << red << enemyHealth << "/"
-            << enemy.getHealth() << reset << ") health left.\n";
-        } else {
-            // This is if there was no comeback
-            data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
-            std::cout << "They respond: " << blue << '"'
-            << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
-            << '"' << '\n' << reset;
-            std::cout << "It does " << red << damageDelivered << reset 
-            << " damage. You have (" << red << data.getCurrentHealth() << "/"
-            << data.getMaxHealth() << reset << ") health left.\n";
-            std::cout << blue << '"' 
-            << hurtLines[Random::get(0, static_cast<int>(hurtLines.size() - 1))]
-            << "\"\n" << reset;
-            std::cout << "Your " 
-            << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))] 
-            << '\n';
+        if (enemyHealth <= 0) {
+            damageDelivered = std::round(((static_cast<double>(enemy.getWit())
+                / static_cast<double>(data.getStoneface()))
+                * enemy.getWeaponStrength()));
+            // TODO: Do enemy turn and make them tell a joke
+            if (comebackSuccess == true) {
+                // This is if the comeback worked
+                comebackSuccess = false;
+                enemyHealth -= damageDelivered;
+                std::cout << green << "Comeback successful!\n" << reset;
+                std::cout << "It does " << red << damageDelivered << reset
+                << " damage. They have (" << red << enemyHealth << "/"
+                << enemy.getHealth() << reset << ") health left.\n";
+            } else {
+                // This is if there was no comeback
+                data.setCurrentHealth(data.getCurrentHealth() - damageDelivered);
+                std::cout << "They respond: " << blue << '"'
+                << enemy.enemyLines[Random::get(0, int(enemy.enemyLines.size() - 1))]
+                << '"' << '\n' << reset;
+                std::cout << "It does " << red << damageDelivered << reset
+                << " damage. You have (" << red << data.getCurrentHealth() << "/"
+                << data.getMaxHealth() << reset << ") health left.\n";
+                std::cout << blue << '"'
+                << hurtLines[Random::get(0, static_cast<int>(hurtLines.size() - 1))]
+                << "\"\n" << reset;
+                std::cout << "Your "
+                << painLines[Random::get(0, static_cast<int>(painLines.size() - 1))]
+                << '\n';
+            }
         }
         inputRecognized = false;
     }
