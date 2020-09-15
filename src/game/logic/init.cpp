@@ -31,12 +31,14 @@ GameData initGame() {
                 std::cout << "Game loaded successfully!\n";
                 break;
             }
+            break;
         case 'n':
         case 'N':
             if (newGame(&data) == 0) {
                 inputRecognized = true;
                 break;
             }
+            break;
         default:
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
