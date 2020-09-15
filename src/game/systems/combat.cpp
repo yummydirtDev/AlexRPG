@@ -201,6 +201,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
     }
     if (enemyHealth <= 0) {
         std::cout << "You beat " << blue << enemy.getName() << reset << '\n';
+        data.setTurns(data.getTurns() + 1);
     } else {
         std::cout << "You lost to " << blue << enemy.getName() << reset << '\n';
     }
