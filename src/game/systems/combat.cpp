@@ -3,7 +3,7 @@
 #ifdef __linux__
     char getch(void) {
         char buf = 0;
-        struct termios old = {0};
+        struct termios old = { 0 };
         fflush(stdout);
         if(tcgetattr(0, &old) < 0)
             perror("tcsetattr()");
@@ -50,7 +50,7 @@
 #endif
 
 Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven,
-            std::vector<std::string> lines, int weaponStrength) {
+            std::vector<std::string> lines, int weaponStrength, int cashReward) {
     m_name = name;
     m_health = health;
     m_wit = wit;
@@ -58,6 +58,7 @@ Enemy::Enemy(std::string name, int health, int wit, int stoneface, int xpGiven,
     m_xpGiven = xpGiven;
     enemyLines = lines;
     m_weaponStrength = weaponStrength;
+    m_cashReward = cashReward;
 }
 
 std::string Enemy::getName() {

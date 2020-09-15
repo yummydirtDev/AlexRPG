@@ -36,10 +36,12 @@ private:
     int m_stoneface;
     int m_xpGiven;
     int m_weaponStrength;
+    int m_cashReward;
 public:
     std::vector<std::string> enemyLines;
     std::vector<std::string> userLines;
-    Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, std::vector<std::string> lines, int weaponStrength);
+    Enemy(std::string name, int health, int wit, int stoneface, int xpGiven, 
+        std::vector<std::string> lines, int weaponStrength, int cashReward);
     std::string getName();
     int getHealth();
     int getWit();
@@ -88,7 +90,7 @@ public:
         "The bar had to be shut down after CTE concerns",
         "Yo mama got brain trauma from a bar"
     };
-    Enemy sam{ "Sam", 20, 2, 2, 50, samELines, 5 };
+    Enemy sam{ "Sam", 20, 2, 2, 50, samELines, 5, 10 };
 };
 
 #endif // __COMBAT_H__
