@@ -85,6 +85,10 @@ int Enemy::getWeaponStrength() {
     return m_weaponStrength;
 }
 
+int Enemy::getCashReward() {
+    return m_cashReward;
+}
+
 GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
     using Random = effolkronium::random_static;
 
@@ -203,8 +207,11 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
     if (enemyHealth <= 0) {
         std::cout << "You beat " << blue << enemy.getName() << reset << '\n';
         data.setTurns(data.getTurns() + 1);
+        data.setXp(data.getXp() + enemy.getXpGiven());
+        data.setCash(data.getCash() + enemy.getCashReward());
     } else {
         std::cout << "You lost to " << blue << enemy.getName() << reset << '\n';
     }
+    saveGame(data.saveToVector());
     return data;
 }

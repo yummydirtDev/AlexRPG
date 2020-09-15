@@ -23,6 +23,7 @@ bool EnableVTMode();
 #include "../lib/random.hpp"
 #include "../lib/color.h"
 #include "items.h"
+#include "../../alexsaveload/saveload.h"
 
 #ifdef __linux__
 char getch(void);
@@ -48,6 +49,7 @@ public:
     int getStoneface();
     int getXpGiven();
     int getWeaponStrength();
+    int getCashReward();
 };
 
 class Enemies {
