@@ -2,6 +2,7 @@
 
 int main() {
     // Intro and initialize
+    bad = 52;
     #ifdef _WIN32
     EnableVTMode();
     #endif
