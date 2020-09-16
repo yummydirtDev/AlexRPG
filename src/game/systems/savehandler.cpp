@@ -270,7 +270,8 @@ char GameData::checkInventory(Items items, bool usableInventory) {
                     if (m_currentHealth > m_maxHealth) {
                         m_currentHealth = m_maxHealth;
                     }
-                    std::cout << "You used " << blue << currentItem.getName() << reset << '\n';
+                    std::cout << "You used " << blue << currentItem.getName() 
+                    << reset << '\n';
                     std::cout << "Health is now: " << blue << m_currentHealth
                         << "/" << m_maxHealth << reset << '\n';
                     inputRecognized = true;
