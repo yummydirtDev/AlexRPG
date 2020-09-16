@@ -211,6 +211,8 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         data.setCash(data.getCash() + enemy.getCashReward());
     } else {
         std::cout << "You lost to " << blue << enemy.getName() << reset << '\n';
+        data.setCurrentHealth(data.getMaxHealth());
+        std::cout << "Try again:\n";
     }
     saveGame(data.saveToVector());
     return data;
