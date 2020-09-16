@@ -188,6 +188,7 @@ std::vector<std::string> GameData::saveToVector() {
 
 void GameData::checkStatus() {
     std::cout << blue << "Name: " << reset << m_userName << '\n';
+    std::cout << blue << "XP: " << reset << m_xp << '\n';
     std::cout << blue << "Health: " << reset << m_currentHealth
     << " / " << m_maxHealth << '\n';
     std::cout << blue << "Wit: " << reset << m_wit << '\n';
