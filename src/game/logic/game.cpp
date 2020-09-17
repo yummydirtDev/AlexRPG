@@ -60,7 +60,7 @@ GameData gameLoop(GameData data) {
         if (isEven(data.getTurns())) {
 
         } else if (!isEven(data.getTurns())) {
-            
+
         }
     }
     return data;
@@ -148,7 +148,7 @@ static inline void tutorial(GameData *data) {
     << "but if it fails they lose the turn and take the damage.\n";
 }
 
-static bool isEven(int number) {
+bool isEven(int number) {
     if ( number % 2 == 0) {
         return true;
     }

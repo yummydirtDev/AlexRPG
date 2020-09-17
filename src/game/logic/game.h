@@ -7,6 +7,6 @@
 #include "../systems/combat.h"
 
 GameData gameLoop(GameData data);
-static bool isEven(int number);
+bool isEven(int number);
 
 #endif // __GAME_H__
