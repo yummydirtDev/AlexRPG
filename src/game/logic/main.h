@@ -1,5 +1,6 @@
 /*
     Copyright 2020 Alex Frutkin
+    
     This file is part of AlexRPG.
 
     AlexRPG is free software: you can redistribute it and/or modify
