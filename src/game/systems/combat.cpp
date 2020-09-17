@@ -211,7 +211,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         std::cout << blue << "XP is now at " << reset << data.getXp() << '\n';
         data.setCash(data.getCash() + enemy.getCashReward());
         std::cout << "You got " << enemy.getCashReward() << " cash. " << blue
-        << "Cash is now at " << reset << data.getCash();
+        << "Cash is now at " << reset << data.getCash() << '\n';
     } else {
         std::cout << "You lost to " << blue << enemy.getName() << reset << '\n';
         data.setCurrentHealth(data.getMaxHealth());
