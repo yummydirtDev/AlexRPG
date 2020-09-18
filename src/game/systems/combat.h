@@ -112,7 +112,10 @@ public:
         "Yo mama got brain trauma from a bar"
     };
     std::vector<std::string> jonELines {
-        ""
+        "I bet your company doesn't match 401k",
+        "You're wrong: here's why",
+        "Do you even budget bro?",
+        "Sounds rather UNPRODUCTIVE!"
     };
     Enemy sam{ "Sam", 20, 2, 2, 50, samELines, 5, 10 };
     Enemy jon{ "Jon", 20, 2, 2, 5, jonELines, 5, 10 };
