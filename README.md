@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FyummydirtDev%2FAlexRPG.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FyummydirtDev%2FAlexRPG?ref=badge_shield)
+
 <p style="align-items: center; display: flex; justify-content: center;"><img src="https://raw.githubusercontent.com/yummydirtDev/AlexRPG/master/AlexRPG.png" /></p>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-b0.1-blue.svg?cacheSeconds=2592000" />
@@ -15,3 +17,6 @@ Code by Alex Frutkin
 Ideas by Alex Frutkin and Sam Frutkin
 Readme by Alex Frutkin and Sam Frutkin
 Subscribe to yummydirt on Youtube.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FyummydirtDev%2FAlexRPG.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FyummydirtDev%2FAlexRPG?ref=badge_large)
