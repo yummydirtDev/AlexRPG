@@ -116,7 +116,10 @@ public:
         "You're wrong: here's why",
         "Do you even budget bro?",
         "Sounds rather UNPRODUCTIVE!",
-        "Let me buy back in at a G"
+        "Let me buy back in at a G",
+        "Sounds like a whole lot of malarky",
+        "9 out of 10 doctors disagree",
+        "Ya fired"
     };
     Enemy sam{ "Sam", 20, 2, 2, 50, samELines, 5, 10 };
     Enemy jon{ "Jon", 20, 2, 2, 50, jonELines, 5, 10 };
