@@ -23,7 +23,8 @@ void checkLevelUp(GameData data) {
     #define UPCOMING_LEVEL ((data.getXp() - (data.getXp() % 100)) / 100)
     if (UPCOMING_LEVEL > data.getLevel()) {
         data.setLevel(UPCOMING_LEVEL);
-        std::cout << "You have leveled up to " << red << "Level " << data.getLevel() << '\n';
+        std::cout << "You have leveled up to " << red << "Level " << data.getLevel() << '\n'
+        << reset;
     }
     #undef UPCOMING_LEVEL
 }

@@ -70,7 +70,7 @@ GameData gameLoop(GameData data) {
         data = endChoice(data, items);
         break;
     case 1:
-        enemies.fight(enemies.sam, data, items);
+        data = enemies.fight(enemies.sam, data, items);
         break;
     default:
         elseVar = true;
@@ -80,7 +80,7 @@ GameData gameLoop(GameData data) {
             data = endChoice(data, items);
         } else if (!isEven(data.getTurns())) {
             if (data.getLevel() <= 2) {
-                enemies.fight(enemies.sam, data, items);
+                data = enemies.fight(enemies.sam, data, items);
             }
         }
     }
