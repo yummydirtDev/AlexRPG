@@ -20,6 +20,7 @@
 #ifndef __COMBAT_H__
 #define __COMBAT_H__
 
+#include "levelhandler.h"
 #include <vector>
 #include <string>
 #include <cmath>
