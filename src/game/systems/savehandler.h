@@ -27,6 +27,7 @@
 #include "items.h"
 #include "../lib/color.h"
 
+// The entire game's data in one data type, with some helpful member functions
 class GameData {
 private:
     /*
