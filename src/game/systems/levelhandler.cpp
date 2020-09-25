@@ -19,6 +19,8 @@
 */
 #include "levelhandler.h"
 
+#define UPCOMING_LEVEL ((data.getXp() - (data.getXp() % 100)) / 100)
+
 void checkLevelUp(GameData data) {
     std::cout << "Your level is " << data.getLevel() << '\n';
 }
