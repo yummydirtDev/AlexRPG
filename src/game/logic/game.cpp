@@ -57,6 +57,7 @@ GameData gameLoop(GameData data) {
                 break;
             default:
                 std::cout << "Input not recognized, try again\n";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 break;
             }
         }
@@ -88,15 +89,15 @@ GameData gameLoop(GameData data) {
 }
 
 static char turnChoice() {
-    char input;
+    char input{ ' ' };
     bool inputRecognized{ false };
-    std::cout << "Would you like to " << red << "(N)" << magenta 
-    << " Next Turn" << reset << ", " << red << "(I)" << magenta
-    << " Inventory" << reset << "," << red << " (S)" << magenta
-    << " Status" << reset << ", or " << red << "(Q)" << magenta
-    << " Quit " << reset;
-    std::cin >> input;
     while (!inputRecognized) {
+        std::cout << "Would you like to " << red << "(N)" << magenta 
+        << " Next Turn" << reset << ", " << red << "(I)" << magenta
+        << " Inventory" << reset << "," << red << " (S)" << magenta
+        << " Status" << reset << ", or " << red << "(Q)" << magenta
+        << " Quit " << reset;
+        std::cin >> input;
         switch (input) {
         case 'N':
         case 'n':
@@ -121,6 +122,8 @@ static char turnChoice() {
             inputRecognized = true;
             break;
         default:
+            std::cin.clear(); //clear bad input flag
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //discard input
             std::cout << "Input not recognized! Please try again.\n";
             break;
         }

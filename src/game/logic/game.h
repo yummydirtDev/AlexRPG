@@ -24,6 +24,7 @@
 #include "init.h"
 #include "../systems/items.h"
 #include "../systems/combat.h"
+#include <limits>
 
 GameData gameLoop(GameData data);
 bool isEven(int number);

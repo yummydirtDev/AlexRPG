@@ -156,14 +156,14 @@ loads it into the object
 */
 
 int GameData::loadFromVector(std::vector<std::string> saveData) {
-    try {
-        m_userName = saveData[0];
+    m_userName = saveData[0];
 
-        // Most of these have to be converted from string to integer with the stoi function
-        if (saveData.size() < 8) {
-            // Just in case the save file is too small
-            return 1;
-        }
+    // Most of these have to be converted from string to integer with the stoi function
+    if (saveData.size() < 8) {
+        // Just in case the save file is too small
+        return 1;
+    }
+    try {
         m_turns = std::stoi(saveData[1]);
         m_maxHealth = std::stoi(saveData[2]);
         m_currentHealth = std::stoi(saveData[3]);
@@ -182,7 +182,7 @@ int GameData::loadFromVector(std::vector<std::string> saveData) {
                 m_items[i] = std::stoi(saveData[10 + i]);
             }
         }
-    } catch (std::invalid_argument const &e) {
+    } catch (std::invalid_argument const& e) {
         std::cout << "Invalid Save File\n";
         return 1;
     }
@@ -302,6 +302,8 @@ char GameData::checkInventory(Items items, bool usableInventory) {
                     return 1;
                 } else {
                     std::cout << "Input not recognized, try again\n";
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 }
             }
             catch (const std::invalid_argument&) {
