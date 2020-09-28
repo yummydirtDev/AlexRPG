@@ -19,7 +19,7 @@
 */
 #include "levelhandler.h"
 
-void checkLevelUp(GameData data) {
+GameData checkLevelUp(GameData data) {
     #define UPCOMING_LEVEL ((data.getXp() - (data.getXp() % 100)) / 100)
     if (UPCOMING_LEVEL > data.getLevel()) {
         data.setLevel(UPCOMING_LEVEL);
@@ -27,4 +27,5 @@ void checkLevelUp(GameData data) {
         << reset;
     }
     #undef UPCOMING_LEVEL
+    return data;
 }

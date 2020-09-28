@@ -24,6 +24,6 @@
 #include "../lib/color.h"
 #include "savehandler.h"
 
-void checkLevelUp(GameData data);
+GameData checkLevelUp(GameData data);
 
 #endif // __LEVELHANDLER_H__

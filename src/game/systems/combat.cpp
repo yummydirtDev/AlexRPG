@@ -236,7 +236,7 @@ GameData Enemies::fight(Enemy enemy, GameData data, Items items) {
         data.setCurrentHealth(data.getMaxHealth());
         std::cout << "Try again:\n";
     }
-    checkLevelUp(data);
+    data = checkLevelUp(data);
     saveGame(data.saveToVector());
     return data;
 }
