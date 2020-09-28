@@ -82,6 +82,8 @@ GameData gameLoop(GameData data) {
         } else if (!isEven(data.getTurns())) {
             if (data.getLevel() <= 2) {
                 data = enemies.fight(enemies.sam, data, items);
+            } else if (data.getLevel() <= 4) {
+                data = enemies.fight(enemies.jon, data, items);
             }
         }
     }
