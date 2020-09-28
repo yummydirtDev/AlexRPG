@@ -156,30 +156,35 @@ loads it into the object
 */
 
 int GameData::loadFromVector(std::vector<std::string> saveData) {
-    m_userName = saveData[0];
+    try {
+        m_userName = saveData[0];
 
-    // Most of these have to be converted from string to integer with the stoi function
-    if (saveData.size() < 8) {
-        // Just in case the save file is too small
-        return 1;
-    }
-    m_turns = std::stoi(saveData[1]);
-    m_maxHealth = std::stoi(saveData[2]);
-    m_currentHealth = std::stoi(saveData[3]);
-    m_wit = std::stoi(saveData[4]);
-    m_stoneface = std::stoi(saveData[5]);
-    m_xp = std::stoi(saveData[6]);
-    m_level = std::stoi(saveData[7]);
-    m_cash = std::stoi(saveData[8]);
-
-    // This is a bit more complex since it is a vector to be loaded
-
-    if ((saveData.size() - 1) > 9) {
-        // Skip line 9 for future compatibility
-        m_items.resize(saveData.size() - 10);
-        for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
-            m_items[i] = std::stoi(saveData[10 + i]);
+        // Most of these have to be converted from string to integer with the stoi function
+        if (saveData.size() < 8) {
+            // Just in case the save file is too small
+            return 1;
         }
+        m_turns = std::stoi(saveData[1]);
+        m_maxHealth = std::stoi(saveData[2]);
+        m_currentHealth = std::stoi(saveData[3]);
+        m_wit = std::stoi(saveData[4]);
+        m_stoneface = std::stoi(saveData[5]);
+        m_xp = std::stoi(saveData[6]);
+        m_level = std::stoi(saveData[7]);
+        m_cash = std::stoi(saveData[8]);
+
+        // This is a bit more complex since it is a vector to be loaded
+
+        if ((saveData.size() - 1) > 9) {
+            // Skip line 9 for future compatibility
+            m_items.resize(saveData.size() - 10);
+            for (long unsigned int i{ 0 }; i < m_items.size(); i++) {
+                m_items[i] = std::stoi(saveData[10 + i]);
+            }
+        }
+    } catch (std::invalid_argument const &e) {
+        std::cout << "Invalid Save File\n";
+        return 1;
     }
     return 0;
 }
