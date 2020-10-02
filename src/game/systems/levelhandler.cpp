@@ -25,6 +25,8 @@ GameData checkLevelUp(GameData data) {
         data.setLevel(UPCOMING_LEVEL);
         std::cout << "You have leveled up to " << red << "Level " << data.getLevel() << '\n'
         << reset;
+        std::cout << "Would you like to upgrade" << red << "(w)" << blue << "it" << reset
+        << '\n';
     }
     #undef UPCOMING_LEVEL
     return data;
