@@ -28,7 +28,7 @@ GameData checkLevelUp(GameData data) {
         std::cout << "You have leveled up to " << red << "Level " << data.getLevel() << '\n'
         << reset;
         while (!inputRecognized) {
-            std::cout << "Would you like to upgrade" << red << "(w)" << blue << "it" << reset
+            std::cout << "Would you like to upgrade " << red << "(w)" << blue << "it" << reset
             << " or " << red << "(s)" << blue << "toneface " << reset;
             std::cin >> upgradeChoice;
             switch (upgradeChoice) {
