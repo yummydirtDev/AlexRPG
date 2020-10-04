@@ -22,11 +22,31 @@
 GameData checkLevelUp(GameData data) {
     #define UPCOMING_LEVEL ((data.getXp() - (data.getXp() % 100)) / 100)
     if (UPCOMING_LEVEL > data.getLevel()) {
+        char upgradeChoice;
+        bool inputRecognized{ false };
         data.setLevel(UPCOMING_LEVEL);
         std::cout << "You have leveled up to " << red << "Level " << data.getLevel() << '\n'
         << reset;
-        std::cout << "Would you like to upgrade" << red << "(w)" << blue << "it" << reset
-        << '\n';
+        while (!inputRecognized) {
+            std::cout << "Would you like to upgrade" << red << "(w)" << blue << "it" << reset
+            << " or " << red << "(s)" << blue << "toneface " << reset;
+            std::cin >> upgradeChoice;
+            switch (upgradeChoice) {
+            case 'w':
+            case 'W':
+                data.setWit(data.getWit() + 1);
+                inputRecognized = true;
+                break;
+            case 's':
+            case 'S':
+                data.setStoneface(data.getStoneface() + 1);
+                inputRecognized = true;
+                break;
+            default:
+                std::cin.clear(); //clear bad input flag
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+        }
     }
     #undef UPCOMING_LEVEL
     return data;
