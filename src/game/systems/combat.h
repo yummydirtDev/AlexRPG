@@ -123,7 +123,7 @@ public:
         "Ya fired"
     };
     Enemy sam{ "Sam", 20, 2, 2, 50, samELines, 5, 10 };
-    Enemy jon{ "Jon", 20, 2, 2, 50, jonELines, 5, 10 };
+    Enemy jon{ "Jon", 30, 3, 3, 75, jonELines, 5, 15 };
 };
 
 #endif // __COMBAT_H__
