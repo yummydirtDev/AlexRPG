@@ -45,7 +45,8 @@ GameData checkLevelUp(GameData data) {
                 inputRecognized = true;
                 break;
             default:
-                std::cin.clear(); //clear bad input flag
+                // Clear bad input flag
+                std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
         }
