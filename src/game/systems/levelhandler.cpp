@@ -36,6 +36,8 @@ GameData checkLevelUp(GameData data) {
             case 'W':
                 data.setWit(data.getWit() + 1);
                 inputRecognized = true;
+                std::cout << blue << "Your wit is now at " << reset << data.getWit() 
+                << '\n';
                 break;
             case 's':
             case 'S':
