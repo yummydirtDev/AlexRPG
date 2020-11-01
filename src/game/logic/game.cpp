@@ -125,7 +125,7 @@ static char turnChoice() {
             break;
         default:
             std::cin.clear(); //clear bad input flag
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //discard input
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Input not recognized! Please try again.\n";
             break;
         }
@@ -168,7 +168,8 @@ static inline void tutorial(GameData *data) {
     std::cout << "Rather than fight with weapons, you tell jokes. "
     << "The measure of joke-telling ability is called wit. To start out you have "
     << data->getWit() << " wit.\n";
-    std::cout << "While there is no real violence from the attacking side, these jokes cause real damage. "
+    std::cout << "While there is no real violence from the attacking side," 
+    << "these jokes cause real damage. "
     << "The defending side will have real and gruesome injuries from these jokes.\n";
     std::cout << "The defending side can attempt a comeback to reverse the damage, "
     << "but if it fails they lose the turn and take the damage.\n";
