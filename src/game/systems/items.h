@@ -41,11 +41,18 @@ public:
     // Constructor for the item
     Item(std::string name, int id, int type, int healing, int damage, int cost);
     // A bunch of get functions
+
+    // Get the ID of an item
     int getID();
+    // Get the name of the item
     std::string getName();
+    // Type 1 is Weapons, type 2 is healing
     int getType();
+    // If the item has healing, get the amount
     int getHealing();
+    // If the item causes damage, get the amount
     int getDamage();
+    // Get how much the item costs at the store
     int getCost();
 };
 
