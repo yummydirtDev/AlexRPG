@@ -20,6 +20,6 @@
 #include "store.h"
 
 GameData store(GameData data, Items items) {
-    std::cout << "Welcome to the shop";
+    std::cout << "Welcome to the shop\n";
     return data;
 }
