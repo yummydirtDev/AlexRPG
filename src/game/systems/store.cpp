@@ -30,6 +30,14 @@ GameData store(GameData data, Items items) {
         << " Weapons\n" << red << "(2)" << magenta << " Healing Items "
         << reset;
         std::cin >> input;
+        switch (input) {
+        case 1:
+            // put a function that expresses all of a certain type
+        default:
+            std::cout << "Input not recognized\n";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
     return data;
 }
