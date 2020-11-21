@@ -20,6 +20,16 @@
 #include "store.h"
 
 GameData store(GameData data, Items items) {
+    // Good old bool inputRecognized{ false };
+    bool inputRecognized{ false };
+    // Only in a char because it isn't going to be very big
+    char input;
     std::cout << "Welcome to the " << green << "shop\n" << reset;
+    while (!inputRecognized) {
+        std::cout << "Choose an option:\n" << red << "(1)" << magenta
+        << " Weapons\n" << red << "(2)" << magenta << " Healing Items "
+        << reset;
+        std::cin >> input;
+    }
     return data;
 }
