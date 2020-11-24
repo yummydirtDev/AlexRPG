@@ -46,6 +46,7 @@ GameData store(GameData data, Items items) {
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
         }
+        // Use the input variable to select the list
     }
     return data;
 }
