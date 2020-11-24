@@ -24,19 +24,27 @@ GameData store(GameData data, Items items) {
     bool inputRecognized{ false };
     // Only in a char because it isn't going to be very big
     char input;
+    // is the user done?
+    bool purchasing{ true };
     std::cout << "Welcome to the " << green << "shop\n" << reset;
-    while (!inputRecognized) {
-        std::cout << "Choose an option:\n" << red << "(1)" << magenta
-        << " Weapons\n" << red << "(2)" << magenta << " Healing Items "
-        << reset;
-        std::cin >> input;
-        switch (input) {
-        case 1:
-            // put a function that expresses all of a certain type
-        default:
-            std::cout << "Input not recognized\n";
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    while (purchasing) {
+        while (!inputRecognized) {
+            std::cout << "Choose an option:\n" << red << "(1)" << magenta
+            << " Weapons\n" << red << "(2)" << magenta << " Healing Items "
+            << reset;
+            std::cin >> input;
+            switch (input) {
+            case 1:
+                std::cout << red << "Weapons\n" << reset;
+                inputRecognized = true;
+            case 2:
+                std::cout << red << "Healing Items\n" << reset;
+                inputRecognized = true;            
+            default:
+                std::cout << "Input not recognized\n";
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
         }
     }
     return data;
