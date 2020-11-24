@@ -65,3 +65,12 @@ Item Items::searchID(int id) {
     }
     return toyMic;
 }
+
+std::vector<Item> Items::searchType(int type) {
+    switch (type) {
+    case 1:
+        return weaponList;
+    case 2:
+        return healList;
+    }
+}

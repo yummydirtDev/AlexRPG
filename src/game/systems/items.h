@@ -21,6 +21,7 @@
 #define __ITEMS_H__
 
 #include <string>
+#include <vector>
 
 // This defines items
 class Item {
@@ -58,10 +59,13 @@ public:
 
 // This aggregates all the items into one object
 class Items {
-    public:
+public:
     Item toyMic{ "Toy Microphone", 0, 1, 0, 5, 0 };
     Item bandaid{ "Bandaid", 1, 2, 15, 0, 5};
+    std::vector<Item> weaponList{ toyMic };
+    std::vector<Item> healList{ bandaid };
     Item searchID(int id);
+    std::vector<Item> searchType(int type);
 };
 
 #endif // __ITEMS_H__
