@@ -73,4 +73,6 @@ std::vector<Item> Items::searchType(int type) {
     case 2:
         return healList;
     }
+    // If I screw up
+    return weaponList;
 }
