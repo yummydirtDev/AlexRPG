@@ -37,9 +37,11 @@ GameData store(GameData data, Items items) {
             case 1:
                 std::cout << red << "Weapons\n" << reset;
                 inputRecognized = true;
+                break;
             case 2:
                 std::cout << red << "Healing Items\n" << reset;
-                inputRecognized = true;            
+                inputRecognized = true; 
+                break;           
             default:
                 std::cout << "Input not recognized\n";
                 std::cin.clear();
