@@ -62,8 +62,8 @@ GameData gameLoop(GameData data) {
             }
         }
         std::cout << '\n';
-        std::cout << "Alright then! Let's begin. You find yourself in a ditch near downtown Phoenix, "
-        << "the city skyline in the horizon.\n";
+        std::cout << "Alright then! Let's begin. You find yourself in a ditch near downtown"
+        << " Phoenix, the city skyline in the horizon.\n";
         std::cout << "You spot a crappy microphone near you on the ground, "
         << "you pick it up just in case it might help.\n";
         // The starting mic for the game
