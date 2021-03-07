@@ -19,6 +19,10 @@
 */
 #include "store.h"
 
+GameData weaponShop(GameData data, Items items) {
+    bool inputRecognized{ false };
+}
+
 GameData store(GameData data, Items items) {
     // Good old bool inputRecognized{ false };
     bool inputRecognized{ false };
@@ -31,7 +35,7 @@ GameData store(GameData data, Items items) {
         while (!inputRecognized) {
             std::cout << "Choose an option:\n" << red << "(1)" << magenta
             << " Weapons\n" << red << "(2)" << magenta << " Healing Items "
-            << reset;
+            << reset << red << "(Q)" << magenta << " Quit ";
             std::cin >> input;
             switch (input) {
             case 1:
@@ -48,6 +52,7 @@ GameData store(GameData data, Items items) {
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
         }
+        inputRecognized = false;
         // Use the input variable to select the list
     }
     return data;
