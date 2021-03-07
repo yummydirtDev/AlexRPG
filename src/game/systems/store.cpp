@@ -54,6 +54,9 @@ GameData store(GameData data, Items items) {
         }
         inputRecognized = false;
         // Use the input variable to select the list
+        if (input == 1){
+            data = weaponShop(data, items);
+        }
     }
     return data;
 }
