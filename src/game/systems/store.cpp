@@ -19,11 +19,34 @@
 */
 #include "store.h"
 
-GameData weaponShop(GameData data, Items items) {
+GameData weaponShop(GameData data, Items items, int storeNumber) {
+    // the same code as below
     bool inputRecognized{ false };
+
+    std::string input;
+
+    bool purchasing{ true };
+    std::cout << "Select a " << red << "weapon" << reset << ":\n";
+    while (purchasing) {
+        if (storeNumber == 1) {
+            while (!inputRecognized) {
+                std::cout << red << "(1)" << magenta << " Toy Microphone\n" << red
+                << "(Q)" << magenta << " Quit ";
+                std::cin >> input;
+                if (input == "1") {
+                    data.addItem(items.toyMic);
+                    inputRecognized = true;
+                } else if (input == "Q" || input == "q") {
+                    purchasing = false;
+                    inputRecognized = true;
+                }
+            }
+        }
+    }
+    return data;
 }
 
-GameData store(GameData data, Items items) {
+GameData store(GameData data, Items items, int storeNumber) {
     // Good old bool inputRecognized{ false };
     bool inputRecognized{ false };
     // Only in a char because it isn't going to be very big
@@ -55,7 +78,7 @@ GameData store(GameData data, Items items) {
         inputRecognized = false;
         // Use the input variable to select the list
         if (input == 1){
-            data = weaponShop(data, items);
+            data = weaponShop(data, items, storeNumber);
         }
     }
     return data;
